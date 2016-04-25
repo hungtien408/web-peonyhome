@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "peonyhome_source", "peonyhome_source\", "{127FA7F1-C00B-4009-AF11-BC7BDDB9193A}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		Debug.AspNetCompiler.VirtualPath = "/peonyhome_source"
+		Debug.AspNetCompiler.PhysicalPath = "peonyhome_source\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\peonyhome_source\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/peonyhome_source"
+		Release.AspNetCompiler.PhysicalPath = "peonyhome_source\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\peonyhome_source\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2597"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{127FA7F1-C00B-4009-AF11-BC7BDDB9193A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{127FA7F1-C00B-4009-AF11-BC7BDDB9193A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
