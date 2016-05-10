@@ -14,10 +14,10 @@ public partial class porduct : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            if (((DataView)odsProduct.Select()).Count <= DataPager1.PageSize)
-            {
-                DataPager1.Visible = false;
-            }
+            //if (((DataView)odsProduct.Select()).Count <= DataPager1.PageSize)
+            //{
+            //    DataPager1.Visible = false;
+            //}
 
             string strTitle, strDescription, strMetaTitle, strMetaDescription;
             if (!string.IsNullOrEmpty(Request.QueryString["pci"]))

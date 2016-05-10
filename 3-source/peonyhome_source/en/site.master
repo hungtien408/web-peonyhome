@@ -235,7 +235,10 @@
 							                <a data-toggle="modal" data-target="#q3" href="#">- Cửa hàng Quận 3</a>
 						                </li>
                                         <li>
-							                <a href="#">- Nhà máy sản xuất</a>
+							                <a data-toggle="modal" data-target="#q1" href="#">- Cửa hàng Quận 1</a>
+						                </li>
+                                        <li>
+							                <a data-toggle="modal" data-target="#nhamay" href="#">- Nhà máy sản xuất</a>
 						                </li>
 					                    </ul>
                                 </div>
@@ -366,6 +369,8 @@
                     <ul>
                         <li><a data-toggle="modal" data-target="#q10" href="#">Cửa hàng quận 10</a></li>
                         <li><a data-toggle="modal" data-target="#q3" href="#">Cửa hàng quận 3</a></li>
+                        <li><a data-toggle="modal" data-target="#q1" href="#">Cửa hàng quận 1</a></li>
+                        <li><a data-toggle="modal" data-target="#nhamay" href="#">Nhà máy sản xuất</a></li>
                     </ul>
                 </div>
             </div>
@@ -436,36 +441,76 @@
                     <div class="row tb">
                         <div class="col-md-8 pad-0">
                             <p class="title-q">
-                                lavender accessories - home’s craft</p>
+                                peony home</p>
                             <p>
-                                <span class="fa fa-map-marker"></span>84/20 Hồ Thị Kỷ, Phường 1, Quận 10, Tp.HCM</p>
+                                <span class="fa fa-map-marker"></span>151A Nam Kỳ Khởi Nghĩa, Phường 6, Quận 3, Tp.HCM</p>
                             <p>
-                                <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 6682 9272</p>
+                                <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 6686 4299</p>
                             <p>
-                                <span class="fa fa-envelope"></span><a href="#">phulieunganhhoa.com</a></p>
+                                <span class="fa fa-envelope"></span><a href="#">peonyhome.com.vn</a></p>
                             <p>
-                                <span class="fa fa-envelope"></span><a href="#">sale@phulieunganhhoa.com</a></p>
+                                <span class="fa fa-envelope"></span><a href="#">peonyhomevietnam@gmail.com</a></p>
                         </div>
                         <div class="col-md-4 pad-0">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.619654735727!2d106.67576821520626!3d10.76376796236947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1e72d3308b%3A0xf69868f1d5f258e6!2zSOG6u20gMjAgSOG7kyBUaOG7iyBL4bu3LCBwaMaw4budbmcgMSwgUXXhuq1uIDEwLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1460429696376"
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.384466279072!2d106.6901483152651!3d10.781837262040916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3118de385f%3A0xe483b58212a683c3!2zMTUxQSBOYW0gS-G7syBLaOG7n2kgTmdoxKlhLCBwaMaw4budbmcgNiwgUXXhuq1uIDMsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1462869293846"
                                 width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%-- ==========popup cua-hang-q1=========== --%>
+    <div class="modal fade" id="q1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="H4">
+                        Các cửa hàng quận 3</h4>
+                </div>
+                <div class="modal-body body1">
                     <div class="row tb">
                         <div class="col-md-8 pad-0">
                             <p class="title-q">
-                                lavender accessories - home’s craft</p>
+                                peony home</p>
                             <p>
-                                <span class="fa fa-map-marker"></span>84/20 Hồ Thị Kỷ, Phường 1, Quận 10, Tp.HCM</p>
+                                <span class="fa fa-map-marker"></span>12C Nguyễn Thị Minh Khai, Phường Đa Kao, Quận 1, Tp.HCM</p>
                             <p>
-                                <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 6682 9272</p>
-                            <p>
-                                <span class="fa fa-envelope"></span><a href="#">phulieunganhhoa.com</a></p>
-                            <p>
-                                <span class="fa fa-envelope"></span><a href="#">sale@phulieunganhhoa.com</a></p>
+                                <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 2241 0666</p>
                         </div>
                         <div class="col-md-4 pad-0">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.619654735727!2d106.67576821520626!3d10.76376796236947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1e72d3308b%3A0xf69868f1d5f258e6!2zSOG6u20gMjAgSOG7kyBUaOG7iyBL4bu3LCBwaMaw4budbmcgMSwgUXXhuq1uIDEwLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1460429696376"
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3025177467453!2d106.70007931526499!3d10.788126261926438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4adb09ee7d%3A0x1686227e6be6863b!2zMTJDIE5ndXnhu4VuIFRo4buLIE1pbmggS2hhaSwgxJBhIEthbywgUXXhuq1uIDEsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1462869515686"
+                                width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%-- ==========popup nha may=========== --%>
+    <div class="modal fade" id="nhamay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="H5">
+                        Nhà máy sản xuất</h4>
+                </div>
+                <div class="modal-body body1">
+                    <div class="row tb">
+                        <div class="col-md-8 pad-0">
+                            <p class="title-q">
+                                Lavender's factory</p>
+                            <p>
+                                <span class="fa fa-map-marker"></span>100D4 Long Lâm, Long Điền Village, Tp.Bà Rịa</p>
+                            <p>
+                                <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 2241 0666</p>
+                        </div>
+                        <div class="col-md-4 pad-0">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3025177467453!2d106.70007931526499!3d10.788126261926438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4adb09ee7d%3A0x1686227e6be6863b!2zMTJDIE5ndXnhu4VuIFRo4buLIE1pbmggS2hhaSwgxJBhIEthbywgUXXhuq1uIDEsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1462869515686"
                                 width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
                         </div>
                     </div>

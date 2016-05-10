@@ -28,7 +28,7 @@
             <a href="#productShow"><span class="ic-up">[+] bấm vào để mua sản phẩm</span><span
                 class="ic-down">[-] bấm vào để tắt</span></a></div>--%>
     </div>
-    <div id="productShow" class="wrapper-product">
+    <%--<div id="productShow" class="wrapper-product">
         <div class="container">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
@@ -127,8 +127,6 @@
                         </SelectParameters>
                     </asp:ObjectDataSource>
                     <div class="pager text-center">
-                        <%--<a class="prev fa fa-angle-left" href="#"></a><a class="current" href="#">1</a>
-                <a href="#">2</a> <a href="#">3</a><a class="next fa fa-angle-right" href="#"></a>--%>
                         <asp:DataPager ID="DataPager1" runat="server" PageSize="8" PagedControlID="lstProduct">
                             <Fields>
                                 <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowNextPageButton="false"
@@ -144,5 +142,5 @@
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>
-    </div>
+    </div>--%>
 </asp:Content>
