@@ -48,7 +48,8 @@
                                         <%# Eval("ProductNameEn") %></a>
                                 </div>
                                 <div class="product-price">
-                                    <p>
+                                    <p><%# !string.IsNullOrEmpty(Eval("Price").ToString()) ?(string.Format("{0:##,###.##}", Eval("Price")).Replace('.', '*').Replace(',', '.').Replace('*', ',')) :  "" %><%# string.IsNullOrEmpty(Eval("Price").ToString()) ? "" : "VNĐ"%></p>
+                                    <p runat="server" Visible='<%# string.IsNullOrEmpty(Eval("Price").ToString()) ? true : false %>'>
                                         <asp:ListView ID="lstPrice" runat="server" DataSourceID="odsPrice" EnableModelValidation="True">
                                             <ItemTemplate>
                                                 <%# !string.IsNullOrEmpty(Eval("Price").ToString()) ?(string.Format("{0:##,###.##}", Eval("Price")).Replace('.', '*').Replace(',', '.').Replace('*', ',')) :  "" %><%# string.IsNullOrEmpty(Eval("Price").ToString()) ? "" : "VNĐ"%>
@@ -67,7 +68,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="product-size">
+                            <div class="product-size" runat="server" Visible='<%# string.IsNullOrEmpty(Eval("Price").ToString()) ? true : false %>'>
                                 <asp:HiddenField ID="hdnProductID" runat="server" Value='<%# Eval("ProductID") %>' />
                                 <asp:DropDownList ID="dropListSize" CssClass="size-box" runat="server" DataSourceID="odsListSize"
                                     DataTextField="ProductLengthName" DataValueField="ProductLengthID" AutoPostBack="True"
