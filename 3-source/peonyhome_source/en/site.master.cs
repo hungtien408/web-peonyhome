@@ -48,6 +48,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
             if (dt.Rows.Count == 0)
             {
                 lblSummary.Text = "0";
+                lblSummary2.Text = "0";
             }
             else
             {
@@ -187,5 +188,35 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void btnSearch2_Click(object sender, EventArgs e)
     {
         Response.Redirect("search-result.aspx?kw=" + txtSearch2.Text.Trim());
+    }
+    protected void lstCart_ItemCommand(object sender, ListViewCommandEventArgs e)
+    {
+        var item = e.Item as ListViewDataItem;
+        var cmd = e.CommandName;
+        if (cmd == "Remove")
+        {
+            var ProductID = (item.FindControl("hdnCartProductID") as HiddenField).Value;
+            //var ProductOptionCategoryID = (item.FindControl("hdnCartProductOptionCategoryID") as HiddenField).Value;
+            //var ProductLengthID = (item.FindControl("hdnCartProductLengthID") as HiddenField).Value;
+
+            var oShoppingCart = new ShoppingCart();
+            oShoppingCart.DeleteItem(ProductID, "", "");
+            lstCart.DataBind();
+        }
+    }
+    protected void lstCart2_ItemCommand(object sender, ListViewCommandEventArgs e)
+    {
+        var item = e.Item as ListViewDataItem;
+        var cmd = e.CommandName;
+        if (cmd == "Remove")
+        {
+            var ProductID = (item.FindControl("hdnCartProductID") as HiddenField).Value;
+            //var ProductOptionCategoryID = (item.FindControl("hdnCartProductOptionCategoryID") as HiddenField).Value;
+            //var ProductLengthID = (item.FindControl("hdnCartProductLengthID") as HiddenField).Value;
+
+            var oShoppingCart = new ShoppingCart();
+            oShoppingCart.DeleteItem(ProductID, "", "");
+            lstCart2.DataBind();
+        }
     }
 }

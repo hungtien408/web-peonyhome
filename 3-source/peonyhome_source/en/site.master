@@ -147,9 +147,11 @@
                                     </div>
                                     <div class="number-show">
                                         <div class="soluong">
-                                            <asp:ListView ID="lstCart2" runat="server" EnableModelValidation="True">
+                                            <asp:ListView ID="lstCart2" runat="server" EnableModelValidation="True" OnItemCommand="lstCart2_ItemCommand">
                                                 <ItemTemplate>
-                                                    <li><%# Eval("ProductName") %><span>x<%# Eval("Quantity") %></span> </li>
+                                                    <asp:HiddenField ID="hdnCartProductID" Value='<%# Eval("ProductID") %>' runat="server" />
+                                                    <li><asp:LinkButton CommandName="Remove" OnClientClick="return confirm('Bạn muốn xóa sản phẩm này?')"
+                                                ID="lkbRemove" runat="server" Text="x"></asp:LinkButton><%# Eval("ProductName") %><span>x<%# Eval("Quantity") %></span> </li>
                                                 </ItemTemplate>
                                                 <LayoutTemplate>
                                                     <ul>
@@ -614,10 +616,13 @@
                 <div id="tabs-3" class="tab-content">
                     <div class="tab-number-show number-show">
                         <div class="soluong">
-                            <asp:ListView ID="lstCart" runat="server" EnableModelValidation="True">
+                            <asp:ListView ID="lstCart" runat="server" EnableModelValidation="True" OnItemCommand="lstCart_ItemCommand">
                                 <ItemTemplate>
                                     <li>
-                                        <%# Eval("ProductName") %><span>x<%# Eval("Quantity")%></span> </li>
+                                        <asp:HiddenField ID="hdnCartProductID" Value='<%# Eval("ProductID") %>' runat="server" />
+                                        <asp:LinkButton CommandName="Remove" OnClientClick="return confirm('Bạn muốn xóa sản phẩm này?')"
+                                                ID="lkbRemove" runat="server" Text="x"></asp:LinkButton><%# Eval("ProductName") %><span>x<%# Eval("Quantity")%></span> 
+                                    </li>
                                 </ItemTemplate>
                                 <LayoutTemplate>
                                     <ul>
