@@ -427,7 +427,7 @@
                             <%# string.Format("{0:##,###.##}", Eval("SavePrice")) %>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="Price" HeaderText="Giá" SortExpression="Price" Visible="False">
+                    <asp:GridTemplateColumn DataField="Price" HeaderText="Giá" SortExpression="Price">
                         <ItemTemplate>
                             <%# string.IsNullOrEmpty(Eval("Price").ToString()) ? Eval("OtherPrice") : string.Format("{0:##,###.##}", Eval("Price")) %>
                         </ItemTemplate>
