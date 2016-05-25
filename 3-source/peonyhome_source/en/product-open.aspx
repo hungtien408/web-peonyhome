@@ -39,7 +39,7 @@
                                     <img alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/img1.jpg" %>'
                                         runat="server" /></a>
                                 <div class="xemnhanh">
-                                    <a class="link-view" href='<%# progressTitle(Eval("ProductNameEn")) + "-pv-" + Eval("ProductID") + ".aspx" %>'><span>Xem nhanh</span></a>
+                                    <a class="link-view" href='<%# progressTitle(Eval("ProductNameEn")) + "-pv-" + Eval("ProductID") + ".aspx" %>'><span>Quick view</span></a>
                                 </div>
                             </div>
                             <div class="product-content">
@@ -73,7 +73,7 @@
                                 <asp:DropDownList ID="dropListSize" CssClass="size-box" runat="server" DataSourceID="odsListSize"
                                     DataTextField="ProductLengthName" DataValueField="ProductLengthID" AutoPostBack="True"
                                     AppendDataBoundItems="true">
-                                    <asp:ListItem Value="">-- Chọn kích thước --</asp:ListItem>
+                                    <asp:ListItem Value="">-- Choose size --</asp:ListItem>
                                 </asp:DropDownList>
                                 <asp:ObjectDataSource ID="odsListSize" runat="server" SelectMethod="ProductSizeColorSelectAll"
                                     TypeName="TLLib.ProductSizeColor">

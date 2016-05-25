@@ -784,7 +784,7 @@
                 var productlist = $('.produc-tblist').imagesLoaded(function () {
                     productlist.textHeight({
                         activetit: true,
-                        listcss: [{ cssname: ".product-imgs" }, { cssname: ".product-name" }, { cssname: ".product-price"}],
+                        listcss: [{ cssname: ".product-imgs" }, { cssname: ".product-name" }, { cssname: ".product-price"}, { cssname: ".product-box"}],
                         wpointb: true,
                         //widthpont: 479,
                         desbool: false,

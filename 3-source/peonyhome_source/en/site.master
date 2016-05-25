@@ -221,26 +221,26 @@
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 element-item">
                                 <div class="footer-box">
                                     <h4>Contact Us</h4>
-                                    <p><span class="fa fa-map-marker"></span> 151A Nam Kỳ Khởi Nghĩa, P.6, Q.3, TP.HCM</p>
+                                    <p><span class="fa fa-map-marker"></span> 151A Nam Ky Khoi Nghia Street, Ward 6, District 3, Tp.HCM</p>
                                     <p><span class="fa fa-phone"></span>+(84) 8 6686 4299</p>
                                     <p><span class="fa fa-envelope"></span> <a href="#">peonyhomevietnam@gmail.com</a></p>
                                 </div>
 				            </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 element-item">
                                 <div class="footer-box">
-                                        <h4><a data-toggle="modal" data-target="#cuahang" href="#">CỬA HÀNG CỦA CHÚNG TÔI</a></h4>
+                                        <h4><a data-toggle="modal" data-target="#cuahang" href="#">OUR STORES</a></h4>
                                     <ul>
 						                <li>
-							                <a data-toggle="modal" data-target="#q10"  href="#">- Cửa hàng Quận 10</a> 
+							                <a data-toggle="modal" data-target="#q10"  href="#">- Stores at district 10</a> 
 						                </li>
 						                <li>
-							                <a data-toggle="modal" data-target="#q3" href="#">- Cửa hàng Quận 3</a>
+							                <a data-toggle="modal" data-target="#q3" href="#">- Stores at district 3</a>
 						                </li>
                                         <li>
-							                <a data-toggle="modal" data-target="#q1" href="#">- Cửa hàng Quận 1</a>
+							                <a data-toggle="modal" data-target="#q1" href="#">- Stores at district 1</a>
 						                </li>
                                         <li>
-							                <a data-toggle="modal" data-target="#nhamay" href="#">- Nhà máy sản xuất</a>
+							                <a data-toggle="modal" data-target="#nhamay" href="#">- Factory</a>
 						                </li>
 					                    </ul>
                                 </div>
@@ -249,11 +249,11 @@
 				            </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 element-item">
                                 <div class="footer-box">
-                                    <h4>ĐĂNG KÝ NHẬN MAIL</h4>
+                                    <h4>SUBSCRIBE TO OUR NEWS</h4>
                                     <div class="mail">
                                         <div class="wrap-email">
                                             <div class="email-left">
-                                                <asp:TextBox ID="txtNewLetter" CssClass="email-text" runat="server" placeholder="Nhập e-mail của bạn..."></asp:TextBox>
+                                                <asp:TextBox ID="txtNewLetter" CssClass="email-text" runat="server" placeholder="Your email address..."></asp:TextBox>
                                                 <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator1"
                                                     runat="server" ValidationGroup="EmailNewLetter" ControlToValidate="txtNewLetter"
                                                     ErrorMessage="Sai định dạng email!" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
@@ -264,7 +264,7 @@
                                             </div>
                                             <div class="email-right">
                                                 <asp:Button ID="btnNewLetter" CssClass="email-btn" ValidationGroup="EmailNewLetter"
-                                                    runat="server" Text="Đăng ký ngay" OnClick="btnNewLetter_Click" />
+                                                    runat="server" Text="SUBSCRIBE NOW" OnClick="btnNewLetter_Click" />
                                             </div>
                                         </div>
                                     </div>
@@ -274,7 +274,7 @@
 				            </div>
                             <div class="col-lg-2 col-md-12 col-sm-6 col-xs-6 pad-right element-item">
                                 <div class="footer-box">
-                                <h4>THEO DÕI CHÚNG TÔI</h4>
+                                <h4>FOLLOW US</h4>
                                     <a class="ft-icon" href="#"><span class="fa fa-facebook"></span></a>
                                     <a class="ft-icon" href="#"><span class="fa fa-youtube"></span></a>
                                     <a class="ft-icon" href="#"><span class="fa fa-twitter"></span></a>
@@ -286,7 +286,7 @@
                </div>
               </div>
             <div class="row">
-                <p class="copyright">Copyrights © 2016 Peonyhome. All right reserved. <a href="http://www.tranlegroup.com">Thiết kế web</a> <a href="http://www.tranlegroup.com">Trần Lê</a></p>
+                <p class="copyright">Copyrights © 2016 Peonyhome. All right reserved. <a href="http://www.tranlegroup.com">Web design by</a> <a href="http://www.tranlegroup.com">Tran Le</a></p>
             </div>
          </footer>
     </div>
@@ -298,7 +298,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">
-                        thông tin khách hàng</h4>
+                        Customer Information</h4>
                 </div>
                 <div class="modal-body body2">
                     <p>
@@ -309,11 +309,11 @@
                         <div class="col-md-4">
                             <asp:TextBox ID="txtFullName" CssClass="name" runat="server"></asp:TextBox>
                             <asp:TextBoxWatermarkExtender ID="txtFullName_WatermarkExtender" runat="server" Enabled="True"
-                                WatermarkText="Họ và Tên" TargetControlID="txtFullName">
+                                WatermarkText="Full name" TargetControlID="txtFullName">
                             </asp:TextBoxWatermarkExtender>
                             <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator1" runat="server"
                                 Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtFullName"
-                                ErrorMessage="Thông tin bắt buộc!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                ErrorMessage="Information required!" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                         <div class="col-md-4">
                             <asp:TextBox ID="txtEmail" CssClass="email" runat="server"></asp:TextBox>
@@ -321,20 +321,20 @@
                                 WatermarkText="Email" TargetControlID="txtEmail">
                             </asp:TextBoxWatermarkExtender>
                             <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator2"
-                                runat="server" ValidationGroup="SendInfo" ControlToValidate="txtEmail" ErrorMessage="Sai định dạng Email!"
+                                runat="server" ValidationGroup="SendInfo" ControlToValidate="txtEmail" ErrorMessage="Email error!"
                                 ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
                                 ForeColor="Red"></asp:RegularExpressionValidator>
                             <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator3" runat="server"
-                                ValidationGroup="SendInfo" ControlToValidate="txtEmail" ErrorMessage="Thông tin bắt buộc!"
+                                ValidationGroup="SendInfo" ControlToValidate="txtEmail" ErrorMessage="Information required!"
                                 Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                         <div class="col-md-4">
                             <asp:TextBox ID="txtPhone" CssClass="phone" runat="server"></asp:TextBox>
                             <asp:TextBoxWatermarkExtender ID="txtPhone_WatermarkExtender" runat="server" Enabled="True"
-                                WatermarkText="Số điện thoại" TargetControlID="txtPhone">
+                                WatermarkText="Phone number" TargetControlID="txtPhone">
                             </asp:TextBoxWatermarkExtender>
                             <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator4" runat="server"
-                                Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtPhone" ErrorMessage="Thông tin bắt buộc!"
+                                Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtPhone" ErrorMessage="Information required!"
                                 ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                     </div>
@@ -342,10 +342,10 @@
                         <div class="col-md-12">
                             <asp:TextBox ID="txtContent" CssClass="noidung" runat="server" TextMode="MultiLine"></asp:TextBox>
                             <asp:TextBoxWatermarkExtender ID="txtContent_WatermarkExtender" runat="server" Enabled="True"
-                                WatermarkText="Nội dung" TargetControlID="txtContent">
+                                WatermarkText="Message" TargetControlID="txtContent">
                             </asp:TextBoxWatermarkExtender>
                             <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator5" runat="server"
-                                Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtContent" ErrorMessage="Thông tin bắt buộc!"
+                                Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtContent" ErrorMessage="Information required!"
                                 ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                     </div>
@@ -365,14 +365,14 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="H3">
-                        cửa hàng của chúng tôi</h4>
+                        OUR STORES</h4>
                 </div>
                 <div class="modal-body">
                     <ul>
-                        <li><a data-toggle="modal" data-target="#q10" href="#">Cửa hàng quận 10</a></li>
-                        <li><a data-toggle="modal" data-target="#q3" href="#">Cửa hàng quận 3</a></li>
-                        <li><a data-toggle="modal" data-target="#q1" href="#">Cửa hàng quận 1</a></li>
-                        <li><a data-toggle="modal" data-target="#nhamay" href="#">Nhà máy sản xuất</a></li>
+                        <li><a data-toggle="modal" data-target="#q10" href="#">Stores at district 10</a></li>
+                        <li><a data-toggle="modal" data-target="#q3" href="#">Stores at district 3</a></li>
+                        <li><a data-toggle="modal" data-target="#q1" href="#">Stores at district 1</a></li>
+                        <li><a data-toggle="modal" data-target="#nhamay" href="#">Factory</a></li>
                     </ul>
                 </div>
             </div>
@@ -386,7 +386,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="H1">
-                        Các cửa hàng quận 10</h4>
+                        Stores at district 10</h4>
                 </div>
                 <div class="modal-body body1">
                     <div class="row tb">
@@ -394,7 +394,7 @@
                             <p class="title-q">
                                 lavender accessories - home’s craft</p>
                             <p>
-                                <span class="fa fa-map-marker"></span>84/20 Hồ Thị Kỷ, Phường 1, Quận 10, Tp.HCM</p>
+                                <span class="fa fa-map-marker"></span>84/20 Ho Thi Ky Street, Ward 1, District 10, Tp.HCM</p>
                             <p>
                                 <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 6682 9272</p>
                             <p>
@@ -412,7 +412,7 @@
                             <p class="title-q">
                                 lavender accessories - home’s craft</p>
                             <p>
-                                <span class="fa fa-map-marker"></span>84/20 Hồ Thị Kỷ, Phường 1, Quận 10, Tp.HCM</p>
+                                <span class="fa fa-map-marker"></span>84/20 Ho Thi Ky Street, Ward 1, District 10, Tp.HCM</p>
                             <p>
                                 <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 6682 9272</p>
                             <p>
@@ -437,7 +437,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="H2">
-                        Các cửa hàng quận 3</h4>
+                        Stores at district 3</h4>
                 </div>
                 <div class="modal-body body1">
                     <div class="row tb">
@@ -445,7 +445,7 @@
                             <p class="title-q">
                                 peony home</p>
                             <p>
-                                <span class="fa fa-map-marker"></span>151A Nam Kỳ Khởi Nghĩa, Phường 6, Quận 3, Tp.HCM</p>
+                                <span class="fa fa-map-marker"></span>151A Nam Ky Khoi Nghia Street, Ward 6, District 3, Tp.HCM</p>
                             <p>
                                 <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 6686 4299</p>
                             <p>
@@ -470,7 +470,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="H4">
-                        Các cửa hàng quận 3</h4>
+                        Stores at district 3</h4>
                 </div>
                 <div class="modal-body body1">
                     <div class="row tb">
@@ -478,7 +478,7 @@
                             <p class="title-q">
                                 peony home</p>
                             <p>
-                                <span class="fa fa-map-marker"></span>12C Nguyễn Thị Minh Khai, Phường Đa Kao, Quận 1, Tp.HCM</p>
+                                <span class="fa fa-map-marker"></span>12C Nguyen Thi Minh Khai Street, Da Kao Ward, District 1, Tp.HCM</p>
                             <p>
                                 <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 2241 0666</p>
                         </div>
@@ -499,7 +499,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="H5">
-                        Nhà máy sản xuất</h4>
+                        Factory</h4>
                 </div>
                 <div class="modal-body body1">
                     <div class="row tb">
@@ -507,7 +507,7 @@
                             <p class="title-q">
                                 Lavender's factory</p>
                             <p>
-                                <span class="fa fa-map-marker"></span>100D4 Long Lâm, Long Điền Village, Tp.Bà Rịa</p>
+                                <span class="fa fa-map-marker"></span>100D4 Long Lam Street, Long Điền Village, Tp.Ba Ria</p>
                             <p>
                                 <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 2241 0666</p>
                         </div>
@@ -784,7 +784,7 @@
                 var productlist = $('.produc-tblist').imagesLoaded(function () {
                     productlist.textHeight({
                         activetit: true,
-                        listcss: [{ cssname: ".product-imgs" }, { cssname: ".product-name" }, { cssname: ".product-price"}],
+                        listcss: [{ cssname: ".product-imgs" }, { cssname: ".product-name" }, { cssname: ".product-price"}, { cssname: ".product-box"}],
                         wpointb: true,
                         //widthpont: 479,
                         desbool: false,
