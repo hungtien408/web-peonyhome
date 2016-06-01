@@ -223,7 +223,7 @@
                                     <h4>Contact Us</h4>
                                     <p><span class="fa fa-map-marker"></span> 151A Nam Ky Khoi Nghia Street, Ward 6, District 3, Tp.HCM</p>
                                     <p><span class="fa fa-phone"></span>+(84) 8 6686 4299</p>
-                                    <p><span class="fa fa-envelope"></span> <a href="#">peonyhomevietnam@gmail.com</a></p>
+                                    <p><span class="fa fa-envelope"></span> <a href="mailTo:sale@peonyhome.com.vn">sale@peonyhome.com.vn</a></p>
                                 </div>
 				            </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 element-item">
@@ -275,10 +275,10 @@
                             <div class="col-lg-2 col-md-12 col-sm-6 col-xs-6 pad-right element-item">
                                 <div class="footer-box">
                                 <h4>FOLLOW US</h4>
-                                    <a class="ft-icon" href="#"><span class="fa fa-facebook"></span></a>
-                                    <a class="ft-icon" href="#"><span class="fa fa-youtube"></span></a>
-                                    <a class="ft-icon" href="#"><span class="fa fa-twitter"></span></a>
-                                    <a class="ft-icon" href="#"><span class="fa fa-google-plus"></span></a>
+                                    <a class="ft-icon" href="https://www.facebook.com/Peony-Home-1582293285337948/"><span class="fa fa-facebook"></span></a>
+                                    <a class="ft-icon" href="https://www.instagram.com/peony_home/"><span class="fa fa fa-instagram"></span></a>
+                                    <%--<a class="ft-icon" href="#"><span class="fa fa-twitter"></span></a>
+                                    <a class="ft-icon" href="#"><span class="fa fa-google-plus"></span></a>--%>
                                 </div>
 				            </div>              
                         </div>
