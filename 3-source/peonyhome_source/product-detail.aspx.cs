@@ -67,10 +67,12 @@ public partial class Product_Detail : System.Web.UI.Page
         double Price = Convert.ToDouble((item.FindControl("hdnPrice") as HiddenField).Value);
         string ProductSizeColorID1 = "";
         string ImageColor = "";
+        string ImageName = "";
         string QuantityList = "";
         int SizeColorQuantity1 = 0;
         var oProductSizeColor = new ProductSizeColor();
         var oProductOptionCategory = new ProductOptionCategory();
+        var oProductImage = new ProductImage();
 
         var oShoppingCart = new ShoppingCart();
         if (cmd == "AddToCart")
@@ -91,6 +93,7 @@ public partial class Product_Detail : System.Web.UI.Page
                     var dv = oProductSizeColor.ProductSizeColorSelectAll(ProductLengthID, ProductOptionCategoryID, ProductID, "True",
                                                                      "True", "", "True").DefaultView;
                     var dv2 = oProductOptionCategory.ProductOptionCategorySelectOne(ProductOptionCategoryID).DefaultView;
+                    var dv3 = oProductImage.ProductImageSelectAll(ProductID, "True", "", "True").DefaultView;
                     if (dv.Count != 0 || dv2.Count != 0)
                     {
                         ProductSizeColorID1 = dv[0]["ProductSizeColorID"].ToString();
@@ -107,9 +110,20 @@ public partial class Product_Detail : System.Web.UI.Page
                         ImageColor = "";
                         SizeColorQuantity1 = 0;
                     }
+
+                    if (dv3.Count != 0)
+                    {
+                        ImageName = dv3[0]["ImageName"].ToString();
+                    }
+                    else
+                    {
+                        ImageName = "";
+                    }
+                    
                     
                     
                     oShoppingCart.CreateCart(ProductID,
+                        ImageName,
                         ImageColor,
                         ProductName,
                         "",
@@ -192,6 +206,7 @@ public partial class Product_Detail : System.Web.UI.Page
                             QuantityList = QuantityList + i + ",";
                         }
                         oShoppingCart.CreateCart(ProductID,
+                            "",
                             "",
                             ProductName,
                             "",

@@ -12,6 +12,7 @@ public class ShoppingCart
     public void CreateCart(
         string ProductID,
         string ImageName,
+        string ImageNameColor,
         string ProductName,
         string ProductNameEn,
         string ProductCode,
@@ -33,6 +34,7 @@ public class ShoppingCart
             dtCart = new DataTable();
             dtCart.Columns.Add("ProductID");
             dtCart.Columns.Add("ImageName");
+            dtCart.Columns.Add("ImageNameColor");
             dtCart.Columns.Add("ProductName");
             dtCart.Columns.Add("ProductNameEn");
             dtCart.Columns.Add("Tag");
@@ -48,6 +50,7 @@ public class ShoppingCart
             dtCart.Rows.Add(new object[] { 
                 ProductID,
                 ImageName,
+                ImageNameColor,
                 ProductName,
                 ProductNameEn,
                 ProductCode,
@@ -75,6 +78,7 @@ public class ShoppingCart
                 dtCart.Rows.Add(new object[] { 
                     ProductID,
                     ImageName,
+                    ImageNameColor,
                     ProductName,
                     ProductNameEn,
                     ProductCode,

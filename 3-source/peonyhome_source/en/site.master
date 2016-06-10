@@ -340,6 +340,17 @@
                     </div>
                     <div class="row tb1">
                         <div class="col-md-12">
+                            <asp:TextBox ID="txtAddress" CssClass="noidung" runat="server" TextMode="MultiLine"></asp:TextBox>
+                            <asp:TextBoxWatermarkExtender ID="txtAddress_WatermarkExtender" runat="server" Enabled="True"
+                                WatermarkText="Address" TargetControlID="txtAddress">
+                            </asp:TextBoxWatermarkExtender>
+                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator6" runat="server"
+                                Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtAddress" ErrorMessage="Thông tin bắt buộc!"
+                                ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+                    <div class="row tb1">
+                        <div class="col-md-12">
                             <asp:TextBox ID="txtContent" CssClass="noidung" runat="server" TextMode="MultiLine"></asp:TextBox>
                             <asp:TextBoxWatermarkExtender ID="txtContent_WatermarkExtender" runat="server" Enabled="True"
                                 WatermarkText="Message" TargetControlID="txtContent">

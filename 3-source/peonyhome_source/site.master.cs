@@ -100,19 +100,21 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 Body += "<p>Họ và tên: " + txtFullName.Text + "</p>";
                 Body += "<p>Email: " + txtEmail.Text + "</p>";
                 Body += "<p>Điện thoại: " + txtPhone.Text + "</p>";
+                Body += "<p>Địa chỉ: " + txtAddress.Text + "</p>";
                 Body += "<p>Nội dung: " + txtContent.Text + "</p>";
                 Body +=
                     "<table style='font-size: 11px; font-family: Verdana; padding: 10px; border: 1px solid #C7D7DB; width: 100%;border-collapse: collapse;' cellpadding='0' cellspacing='0'>";
                 //Body += "<tr><th align='left' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Sản phẩm/Cart Items</th><th style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Cỡ/Size</th><th style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Số lượng/Qty</th><th align='center' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Giá/Item Price</th><th align='right' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Thành tiền/Item Total</th></tr>";
                 Body +=
-                    "<tr><th align='left' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Sản phẩm/Cart Items</th><th align='left' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Màu/Color</th><th align='left' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Kích thước/Size</th><th style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Số lượng/Qty</th><th align='center' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Giá/Item Price</th><th align='right' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Thành tiền/Item Total</th></tr>";
+                    "<tr><th align='left' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Sản phẩm/Cart Items</th><th align='left' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Ảnh</th><th align='left' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Màu/Color</th><th align='left' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Kích thước/Size</th><th style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Số lượng/Qty</th><th align='center' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Giá/Item Price</th><th align='right' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Thành tiền/Item Total</th></tr>";
 
                 foreach (DataRow dr in dtCart.Rows)
                 {
                     string ProductCode = dr["Tag"].ToString();
                     //string ProductID = dr["ProductID"].ToString();
                     string ProductName = dr["ProductName"].ToString();
-                    string ImageColor = dr["ImageName"].ToString();
+                    string ImageName = dr["ImageName"].ToString();
+                    string ImageColor = dr["ImageNameColor"].ToString();
                     string Quantity = dr["Quantity"].ToString();
                     string Price = dr["Price"].ToString();
                     string ProductOptionCategoryName = dr["ProductOptionCategoryName"].ToString();
@@ -132,6 +134,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
                     Body += "<td style='padding: 5px; border-collapse: collapse; border-bottom: 1px solid #C7D7DB;'>" +
                             ProductName + " - " + ProductCode + " - " + ProductOptionCategoryName + " - " +
                             ProductLengthName + "</td>";
+                    Body += string.IsNullOrEmpty(ImageName) ? "<td align='center' style='padding: 5px; border-collapse: collapse; border-bottom: 1px solid #C7D7DB;'><p style='text-align:center;'>null</p></td>" : "<td align='center' style='padding: 5px; border-collapse: collapse; border-bottom: 1px solid #C7D7DB;'><img src='http://peonyhome.com.vn/res/product/album/" + ImageName + "' alt='' width='50'/></td>";
                     //Body += "<td align='center' style='padding: 5px; border-collapse: collapse; border-bottom: 1px solid #C7D7DB;'>" + ProductColorName + "</td>";
                     Body += string.IsNullOrEmpty(ImageColor) ? "<td align='center' style='padding: 5px; border-collapse: collapse; border-bottom: 1px solid #C7D7DB;'><p style='text-align:center;'>null</p></td>" : "<td align='center' style='padding: 5px; border-collapse: collapse; border-bottom: 1px solid #C7D7DB;'><img runat='server' src='~/res/productoptioncategory/" + ImageColor + "' alt=''/></td>";
                     Body += string.IsNullOrEmpty(ProductLengthName) ? "<td align='center' style='padding: 5px; border-collapse: collapse; border-bottom: 1px solid #C7D7DB;'><p style='text-align:center;'>null</p></td>" : "<td align='center' style='padding: 5px; border-collapse: collapse; border-bottom: 1px solid #C7D7DB;'>" + ProductLengthName + "</td>";
@@ -147,7 +150,11 @@ public partial class MasterPage : System.Web.UI.MasterPage
                     Body += "</tr>";
                 }
                 Body += "</table>";
-                Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master",
+                //Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master",
+                //    txtEmail.Text, "hungtien408@gmail.com", "XÁC NHẬN MUA HÀNG", Body, true);
+                //Common.SendMail("smtp.gmail.com", 587, "peonyhomevietnam@gmail.com", "93919391",
+                //    txtEmail.Text, "sale@peonyhome.com.vn", "XÁC NHẬN MUA HÀNG", Body, true);
+                Common.SendMail("smtp.gmail.com", 587, "peonyhomevietnam1@gmail.com", "93919391",
                     txtEmail.Text, "sale@peonyhome.com.vn", "XÁC NHẬN MUA HÀNG", Body, true);
 
                 ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "runtime",
