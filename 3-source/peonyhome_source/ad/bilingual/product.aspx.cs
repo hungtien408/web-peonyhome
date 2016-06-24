@@ -274,7 +274,7 @@ public partial class ad_single_product : System.Web.UI.Page
                 {
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullPath));
                     //ResizeCropImage.ResizeByCondition(strFullPath, 800, 800);
-                    ResizeCropImage.CreateThumbNailByCondition("~/res/product/", "~/res/product/thumbs/", ImageName, 120, 120);
+                    //ResizeCropImage.CreateThumbNailByCondition("~/res/product/", "~/res/product/thumbs/", ImageName, 120, 120);
                 }
 
                 if (TempImage.Rows.Count > 0)
@@ -507,7 +507,7 @@ public partial class ad_single_product : System.Web.UI.Page
         e.File.SaveAs(Server.MapPath(targetFolder + newName));
 
         //ResizeCropImage.ResizeByCondition(targetFolder + newName, 800, 800);
-        ResizeCropImage.CreateThumbNailByCondition("~/res/product/album/", "~/res/product/album/thumbs/", newName, 120, 120);
+        //ResizeCropImage.CreateThumbNailByCondition("~/res/product/album/", "~/res/product/album/thumbs/", newName, 120, 120);
 
         if (string.IsNullOrEmpty(ProductID))
         {

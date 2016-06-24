@@ -514,7 +514,7 @@
                         <ItemTemplate>
                             <asp:Panel ID="Panel1" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>'
                                 Width="95">
-                                <img alt="" src='<%# "~/res/product/thumbs/" + Eval("ImageName") %>' width="80" runat="server"
+                                <img alt="" src='<%# "~/res/product/" + Eval("ImageName") %>' width="80" runat="server"
                                     visible='<%# string.IsNullOrEmpty(Eval("ImageName").ToString()) ? false : true %>' />
                                 <asp:LinkButton ID="lnkDeleteImage" runat="server" rel='<%#  Eval("ProductID") + "#" + Eval("ImageName") %>'
                                     CommandName="DeleteImage" OnClientClick="return confirm('Xóa ảnh này ?')">
@@ -979,7 +979,7 @@
                                                                 <fieldset style="float: left; margin: 5px; padding: 2px 2px 2px 2px; position: relative;
                                                                     background: #eeeeee;" class="myClass">
                                                                     <a href='<%# "~/res/product/album/" + Eval("ImageName") %>' runat="server" class="lightbox">
-                                                                        <img alt="" src='<%# "~/res/product/album/thumbs/" + Eval("ImageName") %>' runat="server"
+                                                                        <img alt="" src='<%# "~/res/product/album/" + Eval("ImageName") %>' runat="server"
                                                                             width="100" height="100" />
                                                                     </a>
                                                                     <div align="right">
