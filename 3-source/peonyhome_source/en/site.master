@@ -72,7 +72,48 @@
                         <div class="col-md-4 col-sm-4 col-xs-4">
                            <div class="menu-button">
 							<span class="button fa fa-bars"></span>
-							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                               <div class="menu-list">
+                                   <asp:ListView ID="lstMenu" runat="server" DataSourceID="odsMenu" EnableModelValidation="True">
+                                    <ItemTemplate>
+                                        <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryNameEn") %></a>
+                                        <asp:HiddenField ID="hdnProductCategoryID" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
+                                        <asp:ListView ID="lstMenuSub" runat="server" DataSourceID="odsMenuSub" EnableModelValidation="True">
+                                           <ItemTemplate>
+                                                <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryNameEn") %></a></li>
+                                           </ItemTemplate>
+                                           <LayoutTemplate>
+                                                <ul class="menu-sub">
+                                                    <li runat="server" id="itemPlaceholder"></li>
+                                                </ul>
+                                           </LayoutTemplate>
+                                         </asp:ListView>
+                                         <asp:ObjectDataSource ID="odsMenuSub" runat="server" SelectMethod="ProductCategorySelectAll" TypeName="TLLib.ProductCategory">
+                                             <SelectParameters>
+                                                <asp:ControlParameter ControlID="hdnProductCategoryID" DefaultValue="0" 
+                                                    Name="parentID" PropertyName="Value" Type="Int32" />
+                                                <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                                <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                                             </SelectParameters>
+                                         </asp:ObjectDataSource>
+                                       </li>
+                                    </ItemTemplate>
+                                    <LayoutTemplate>
+                                        <ul>
+                                        <li runat="server" id="itemPlaceholder"></li>
+                                        </ul>
+                                    </LayoutTemplate>
+                                </asp:ListView>
+                                <asp:ObjectDataSource ID="odsMenu" runat="server" SelectMethod="ProductCategorySelectAll" TypeName="TLLib.ProductCategory">
+                                    <SelectParameters>
+                                        <asp:Parameter DefaultValue="0" Name="parentID" Type="Int32" />
+                                        <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                        <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                        <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                                    </SelectParameters>
+                                 </asp:ObjectDataSource>
+                               </div>
+							<%--<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                                 <asp:ListView ID="lstMenu" runat="server" DataSourceID="odsMenu" EnableModelValidation="True">
                                     <ItemTemplate>
                                         <div class="panel panel-default">
@@ -122,7 +163,7 @@
                                         <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                                     </SelectParameters>
                                 </asp:ObjectDataSource>
-							</div>
+							</div>--%>
 						</div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-4">
@@ -405,7 +446,8 @@
                             <p class="title-q">
                                 peonyhome furniture</p>
                             <p>
-                                <span class="fa fa-map-marker"></span>300 Ngo Gia Tu Street, Ward 4, District 10, Tp.HCM</p>
+                                <span class="fa fa-map-marker"></span>300 Ngo Gia Tu Street, Ward 4, District 10,
+                                Tp.HCM</p>
                             <p>
                                 <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 2241 0666</p>
                             <p>
@@ -454,7 +496,8 @@
                             <p class="title-q">
                                 peony home</p>
                             <p>
-                                <span class="fa fa-map-marker"></span>151A Nam Ky Khoi Nghia Street, Ward 6, District 3, Tp.HCM</p>
+                                <span class="fa fa-map-marker"></span>151A Nam Ky Khoi Nghia Street, Ward 6, District
+                                3, Tp.HCM</p>
                             <p>
                                 <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 6686 4299</p>
                             <p>
@@ -485,7 +528,8 @@
                             <p class="title-q">
                                 peony home</p>
                             <p>
-                                <span class="fa fa-map-marker"></span>12C Nguyen Thi Minh Khai Street, Da Kao Ward, District 1, Tp.HCM</p>
+                                <span class="fa fa-map-marker"></span>12C Nguyen Thi Minh Khai Street, Da Kao Ward,
+                                District 1, Tp.HCM</p>
                             <p>
                                 <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 2241 0666</p>
                             <p>
@@ -516,7 +560,8 @@
                             <p class="title-q">
                                 Lavender's factory</p>
                             <p>
-                                <span class="fa fa-map-marker"></span>100D4 Long Lam Street, Long Điền Village, Tp.Ba Ria</p>
+                                <span class="fa fa-map-marker"></span>100D4 Long Lam Street, Long Điền Village,
+                                Tp.Ba Ria</p>
                             <p>
                                 <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 2241 0666</p>
                             <p>
@@ -551,7 +596,53 @@
             </div>
             <div class="menu-content">
                 <div id="tabs-1" class="tab-content">
-                    <div class="tab-panel-group panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+                    <div class="menu-list">
+                        <asp:ListView ID="lstMenuMobile" runat="server" DataSourceID="odsMenuMobile" EnableModelValidation="True">
+                            <ItemTemplate>
+                                <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                    <%# Eval("ProductCategoryNameEn") %></a>
+                                    <asp:HiddenField ID="hdnProductCategoryID" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
+                                    <asp:ListView ID="lstMenuSubMobile" runat="server" DataSourceID="odsMenuSubMobile"
+                                        EnableModelValidation="True">
+                                        <ItemTemplate>
+                                            <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                                <%# Eval("ProductCategoryNameEn") %></a></li>
+                                        </ItemTemplate>
+                                        <LayoutTemplate>
+                                            <ul class="menu-sub1">
+                                                <li runat="server" id="itemPlaceholder"></li>
+                                            </ul>
+                                        </LayoutTemplate>
+                                    </asp:ListView>
+                                    <asp:ObjectDataSource ID="odsMenuSubMobile" runat="server" SelectMethod="ProductCategorySelectAll"
+                                        TypeName="TLLib.ProductCategory">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="hdnProductCategoryID" DefaultValue="0" Name="parentID"
+                                                PropertyName="Value" Type="Int32" />
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </li>
+                            </ItemTemplate>
+                            <LayoutTemplate>
+                                <ul>
+                                    <li runat="server" id="itemPlaceholder"></li>
+                                </ul>
+                            </LayoutTemplate>
+                        </asp:ListView>
+                        <asp:ObjectDataSource ID="odsMenuMobile" runat="server" SelectMethod="ProductCategorySelectAll"
+                            TypeName="TLLib.ProductCategory">
+                            <SelectParameters>
+                                <asp:Parameter DefaultValue="0" Name="parentID" Type="Int32" />
+                                <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                            </SelectParameters>
+                        </asp:ObjectDataSource>
+                    </div>
+                    <%--<div class="tab-panel-group panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
                         <asp:ListView ID="lstMenuMobile" runat="server" DataSourceID="odsMenuMobile" EnableModelValidation="True">
                             <ItemTemplate>
                                 <div class="panel panel-default">
@@ -607,7 +698,7 @@
                                 <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                             </SelectParameters>
                         </asp:ObjectDataSource>
-                    </div>
+                    </div>--%>
                 </div>
                 <div id="tabs-2" class="tab-content">
                     <div class="tab-search search">
@@ -617,8 +708,8 @@
                                 <span class="del"><a href="javascript:void(0);">x</a></span>
                                 <asp:Button ID="btnSearch2" CssClass="search-btn" runat="server" OnClick="btnSearch2_Click" />
                                 <asp:TextBox ID="txtSearch2" runat="server" CssClass="search-text"></asp:TextBox>
-                                <asp:TextBoxWatermarkExtender ID="txtSearch2_TextBoxWatermarkExtender" runat="server" Enabled="True"
-                                    WatermarkText="Nhập từ khóa tiềm kiếm.." TargetControlID="txtSearch2">
+                                <asp:TextBoxWatermarkExtender ID="txtSearch2_TextBoxWatermarkExtender" runat="server"
+                                    Enabled="True" WatermarkText="Nhập từ khóa tiềm kiếm.." TargetControlID="txtSearch2">
                                 </asp:TextBoxWatermarkExtender>
                             </div>
                         </asp:Panel>
@@ -632,7 +723,7 @@
                                     <li>
                                         <asp:HiddenField ID="hdnCartProductID" Value='<%# Eval("ProductID") %>' runat="server" />
                                         <asp:LinkButton CommandName="Remove" OnClientClick="return confirm('Bạn muốn xóa sản phẩm này?')"
-                                                ID="lkbRemove" runat="server" Text="x"></asp:LinkButton><%# Eval("ProductName") %><span>x<%# Eval("Quantity")%></span> 
+                                            ID="lkbRemove" runat="server" Text="x"></asp:LinkButton><%# Eval("ProductName") %><span>x<%# Eval("Quantity")%></span>
                                     </li>
                                 </ItemTemplate>
                                 <LayoutTemplate>
@@ -711,7 +802,7 @@
         });
         $(".button").click(function () {
             $(this).toggleClass("current");
-            $(".panel-group").stop(true, true).toggle("slow");
+            $(".menu-list ").stop(true, true).toggle("slow");
         });
         $(".button1").click(function () {
             $("body").addClass("overhiden");
@@ -756,14 +847,17 @@
             $(this).toggleClass("current");
             $("#sub4").stop(true, true).toggle("slow");
         });
-        $('.panel-heading a[data-toggle="collapse"]').click(function () {
-            $('.panel-heading').removeClass('actives');
-            $(this).toggleClass("current").parents('.panel-heading').addClass('actives');
-            $('.panel-heading').each(function () {
-                if (!$(this).hasClass("actives")) {
-                    $(this).find('a[data-toggle="collapse"]').removeClass("current");
-                }
-            });
+//        $('.panel-heading a[data-toggle="collapse"]').click(function () {
+//            $('.panel-heading').removeClass('actives');
+//            $(this).toggleClass("current").parents('.panel-heading').addClass('actives');
+//            $('.panel-heading').each(function () {
+//                if (!$(this).hasClass("actives")) {
+//                    $(this).find('a[data-toggle="collapse"]').removeClass("current");
+//                }
+//            });
+//        });
+        $('.menu-list li').hover(function () {
+            $(this).children('.menu-sub').stop(true, false, true).slideToggle(300);
         });
         $(".selecc-colores li a").click(function() {
             var productcolorid = $(this).attr("productcolorid");
