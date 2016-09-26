@@ -153,6 +153,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 //Common.SendMail("smtp.gmail.com", 587, "peonyhomevietnam@gmail.com", "93919391",
                 //    txtEmail.Text, "sale@peonyhome.com.vn", "XÁC NHẬN MUA HÀNG", Body, true);
                 Common.SendMail("smtp.gmail.com", 587, "peonyhomevietnam1@gmail.com", "93919391",
+                    txtEmail.Text, "peonyhomevietnam@gmail.com", "XÁC NHẬN MUA HÀNG", Body, true);
+                Common.SendMail("smtp.gmail.com", 587, "peonyhomevietnam1@gmail.com", "93919391",
                     txtEmail.Text, "sale@peonyhome.com.vn", "XÁC NHẬN MUA HÀNG", Body, true);
 
                 ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "runtime",

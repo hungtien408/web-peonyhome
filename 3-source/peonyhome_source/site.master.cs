@@ -158,8 +158,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
                     txtEmail.Text, "peonyhomevietnam@gmail.com", "XÁC NHẬN MUA HÀNG", Body, true);
                 Common.SendMail("smtp.gmail.com", 587, "peonyhomevietnam1@gmail.com", "93919391",
                     txtEmail.Text, "sale@peonyhome.com.vn", "XÁC NHẬN MUA HÀNG", Body, true);
-                Common.SendMail("smtp.gmail.com", 587, "peonyhomevietnam1@gmail.com", "93919391",
-                    "hungtien408@gmail.com", "sale1@tranlegroup.com", "XÁC NHẬN MUA HÀNG", Body, true);
+                //Common.SendMail("smtp.gmail.com", 587, "peonyhomevietnam1@gmail.com", "93919391",
+                //    "hungtien408@gmail.com", "sale1@tranlegroup.com", "XÁC NHẬN MUA HÀNG", Body, true);
 
                 ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "runtime",
                     " $(document).ready(function () {alert('Chúc mừng bạn đã mua hàng thành công !');});",
