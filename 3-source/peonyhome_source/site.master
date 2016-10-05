@@ -608,7 +608,7 @@
         </div>
     </div>
     <%-- mobi --%>
-    <div id="mobileMenu" class="wrapper-head wrappper-mobile">
+    <div id="" class="wrapper-head wrappper-mobile">
         <div id="tabs" class="table-head">
             <div class="head-menu">
                 <ul>
@@ -836,26 +836,32 @@
         });
         $(".button1").click(function () {
             $("body").addClass("overhiden");
-            var idb = $(this).attr("href");
-            var maskbox = "mask-menu";
-            mymenuh(idb);
-            $(idb).stop(true, true).animate({ left: 0 }, 500, function () {
-                $(this).after('<div class="' + maskbox + '"></div>');
-                $("." + maskbox).click(function () {
-                    $(idb).stop(true, true).animate({ left: "-100%" }, 500, function () {
-                        $("." + maskbox).remove();
-                    });
-                });
-            });
-            $(idb).find(".closea").click(function () {
-                $(idb).stop(true, true).animate({ left: "-100%" }, 500, function () {
-                    $("." + maskbox).remove();
-                });
-                return false;
-            });
-            $(window).resize(function () {
-                mymenuh(idb); ;
-            });
+            $('body').append('<div class="bg-overlay"></div>');
+            //var idb = $(this).attr("href");
+            //var maskbox = "mask-menu";
+            //mymenuh(idb);
+            //$(idb).stop(true, true).animate({ left: 0 }, 500, function () {
+            //    $(this).after('<div class="' + maskbox + '"></div>');
+            //    $("." + maskbox).click(function () {
+            //        $(idb).stop(true, true).animate({ left: "-100%" }, 500, function () {
+            //            $("." + maskbox).remove();
+            //        });
+            //    });
+            //});
+            //$(idb).find(".closea").click(function () {
+            //    $(idb).stop(true, true).animate({ left: "-100%" }, 500, function () {
+            //        $("." + maskbox).remove();
+            //    });
+            //    return false;
+            //});
+            //$(window).resize(function () {
+            //    mymenuh(idb); ;
+            //});
+            $('.wrappper-mobile').addClass('open-menu');
+        });
+        $(document).on('click', '.bg-overlay, .closea', function (e) {
+            $('.wrappper-mobile').removeClass('open-menu');
+            $('.bg-overlay').remove();
         });
         $(".search-click").click(function () {
             $(this).toggleClass("current");
