@@ -39,17 +39,21 @@
                                     <img alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/product/" + Eval("ImageName") : "~/assets/images/img1.jpg" %>'
                                         runat="server" /></a>
                                 <div class="xemnhanh">
-                                    <a class="link-view" href='<%# progressTitle(Eval("ProductNameEn")) + "-pv-" + Eval("ProductID") + ".aspx" %>'><span>Quick view</span></a>
+                                    <a class="link-view" href='<%# progressTitle(Eval("ProductNameEn")) + "-pv-" + Eval("ProductID") + ".aspx" %>'>
+                                        <span>Quick view</span></a>
                                 </div>
                             </div>
                             <div class="product-content">
                                 <div class="product-name">
                                     <a href='<%# progressTitle(Eval("ProductNameEn")) + "-pci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
                                         <%# Eval("ProductNameEn") %></a>
+                                    <p>
+                                        <%# Eval("Tag") %></p>
                                 </div>
                                 <div class="product-price">
-                                    <p><%# !string.IsNullOrEmpty(Eval("Price").ToString()) ?(string.Format("{0:##,###.##}", Eval("Price")).Replace('.', '*').Replace(',', '.').Replace('*', ',')) :  "" %><%# string.IsNullOrEmpty(Eval("Price").ToString()) ? "" : "VNĐ"%></p>
-                                    <p runat="server" Visible='<%# string.IsNullOrEmpty(Eval("Price").ToString()) ? true : false %>'>
+                                    <p>
+                                        <%# !string.IsNullOrEmpty(Eval("Price").ToString()) ?(string.Format("{0:##,###.##}", Eval("Price")).Replace('.', '*').Replace(',', '.').Replace('*', ',')) :  "" %><%# string.IsNullOrEmpty(Eval("Price").ToString()) ? "" : "VNĐ"%></p>
+                                    <p runat="server" visible='<%# string.IsNullOrEmpty(Eval("Price").ToString()) ? true : false %>'>
                                         <asp:ListView ID="lstPrice" runat="server" DataSourceID="odsPrice" EnableModelValidation="True">
                                             <ItemTemplate>
                                                 <%# !string.IsNullOrEmpty(Eval("Price").ToString()) ?(string.Format("{0:##,###.##}", Eval("Price")).Replace('.', '*').Replace(',', '.').Replace('*', ',')) :  "" %><%# string.IsNullOrEmpty(Eval("Price").ToString()) ? "" : "VNĐ"%>
@@ -68,7 +72,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="product-size" runat="server" Visible='<%# string.IsNullOrEmpty(Eval("Price").ToString()) ? true : false %>'>
+                            <div class="product-size" runat="server" visible='<%# string.IsNullOrEmpty(Eval("Price").ToString()) ? true : false %>'>
                                 <asp:HiddenField ID="hdnProductID" runat="server" Value='<%# Eval("ProductID") %>' />
                                 <asp:DropDownList ID="dropListSize" CssClass="size-box" runat="server" DataSourceID="odsListSize"
                                     DataTextField="ProductLengthName" DataValueField="ProductLengthID" AutoPostBack="True"

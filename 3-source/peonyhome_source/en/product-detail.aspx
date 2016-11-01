@@ -53,6 +53,9 @@
                                         <h1>
                                             <%# Eval("ProductNameEn") %></h1>
                                         <p>
+                                            Product code:
+                                            <%# Eval("Tag") %></p>
+                                        <p>
                                             <%# !string.IsNullOrEmpty(Eval("Price").ToString()) ?(string.Format("{0:##,###.##}", Eval("Price")).Replace('.', '*').Replace(',', '.').Replace('*', ',')) :  "" %><%# string.IsNullOrEmpty(Eval("Price").ToString()) ? "" : "VNĐ"%></p>
                                         <div class="social-icos icos-mobi">
                                             <ul>
@@ -73,10 +76,10 @@
                                     <asp:HiddenField ID="hdnProductOptionCategoryID" runat="server" />
                                     <asp:ListView ID="lstColor" runat="server" DataSourceID="odsColor" EnableModelValidation="True">
                                         <ItemTemplate>
-                                            <li><a href="javascript:void(0);" productcolorid='<%# Eval("ProductOptionCategoryID") %>' class="color-img" >
+                                            <li><a href="javascript:void(0);" productcolorid='<%# Eval("ProductOptionCategoryID") %>'
+                                                class="color-img">
                                                 <img alt='<%# Eval("ImageNameColor") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageNameColor").ToString()) ? "~/res/productoptioncategory/" + Eval("ImageNameColor") : "~/assets/images/color-img-1.gif" %>'
-                                                    runat="server" /></a>
-                                                    </li>
+                                                    runat="server" /></a> </li>
                                         </ItemTemplate>
                                         <LayoutTemplate>
                                             <ul class="selecc-colores">
@@ -99,8 +102,8 @@
                                     <div class="clr">
                                     </div>
                                     <div class="bnt-add">
-                                        <span class="sanpham"><a class="link-pro" href="#proList">Products</a></span>
-                                        <span class="add">
+                                        <span class="sanpham"><a class="link-pro" href="#proList">Products</a></span> <span
+                                            class="add">
                                             <asp:LinkButton ID="lkbAddToCart" runat="server" CommandName="AddToCart" ValidationGroup="cart">Add to cart</asp:LinkButton></span>
                                     </div>
                                 </div>
