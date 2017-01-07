@@ -468,7 +468,7 @@
                                 CssClass="checkbox" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="InStock" HeaderText="Còn hàng" SortExpression="InStock" Visible="False">
+                    <asp:GridTemplateColumn DataField="InStock" HeaderText="Còn hàng" SortExpression="InStock">
                         <ItemTemplate>
                             <asp:CheckBox ID="chkInStock" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("InStock").ToString()) ? false : Eval("InStock") %>'
                                 CssClass="checkbox" />
@@ -590,7 +590,7 @@
                                                                 Checked='<%# (Container is GridEditFormInsertItem) ? false : Eval("IsSaleOff") %>' Visible="False" />
                                                             &nbsp;&nbsp;
                                                             <asp:CheckBox ID="chkInStock" runat="server" CssClass="checkbox" Text=" Còn hàng"
-                                                                Checked='<%# (Container is GridEditFormInsertItem) ? true : Eval("InStock") %>' Visible="False" />
+                                                                Checked='<%# (Container is GridEditFormInsertItem) ? true : Eval("InStock") %>' />
                                                             &nbsp;&nbsp;
                                                             <asp:CheckBox ID="chkIsShowOnHomePage" runat="server" CssClass="checkbox" Text=" Xem trên trang chủ"
                                                                 Checked='<%# (Container is GridEditFormInsertItem) ? true : (string.IsNullOrEmpty(Eval("IsShowOnHomePage").ToString()) ? false : Eval("IsShowOnHomePage"))%>' Visible="False" />

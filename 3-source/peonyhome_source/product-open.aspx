@@ -118,7 +118,7 @@
                     <asp:Parameter Name="ManufacturerID" Type="String" />
                     <asp:Parameter Name="OriginID" Type="String" />
                     <asp:Parameter Name="Tag" Type="String" />
-                    <asp:Parameter Name="InStock" Type="String" />
+                    <asp:Parameter DefaultValue="True" Name="InStock" Type="String" />
                     <asp:Parameter Name="IsHot" Type="String" />
                     <asp:Parameter Name="IsNew" Type="String" />
                     <asp:Parameter Name="IsBestSeller" Type="String" />

@@ -75,7 +75,8 @@
                                <div class="menu-list">
                                    <asp:ListView ID="lstMenu" runat="server" DataSourceID="odsMenu" EnableModelValidation="True">
                                     <ItemTemplate>
-                                        <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryNameEn") %></a>
+                                        <li><%--<a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryNameEn") %></a>--%>
+                                            <a href='javascript:void(0);'><%# Eval("ProductCategoryNameEn") %></a>
                                         <asp:HiddenField ID="hdnProductCategoryID" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
                                         <asp:ListView ID="lstMenuSub" runat="server" DataSourceID="odsMenuSub" EnableModelValidation="True">
                                            <ItemTemplate>
@@ -950,7 +951,12 @@
 //                }
 //            });
 //        });
-        $('.menu-list li').hover(function () {
+
+        //$('.menu-list li').hover(function () {
+        //    $(this).children('.menu-sub').stop(true, false, true).slideToggle(300);
+        //});
+        $('.menu-list li').click(function () {
+            $('.menu-sub').slideUp();
             $(this).children('.menu-sub').stop(true, false, true).slideToggle(300);
         });
         $(".selecc-colores li a").click(function() {
