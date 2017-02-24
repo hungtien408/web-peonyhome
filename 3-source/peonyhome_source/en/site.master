@@ -63,58 +63,58 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
-    </asp:ToolkitScriptManager>
-    <div id="wrapper">
-        <header id="header">
-			    <div class="wrapper-head desktop-show">
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+        </asp:ToolkitScriptManager>
+        <div id="wrapper">
+            <header id="header">
+                <div class="wrapper-head desktop-show">
                     <div class="row">
                         <div class="col-md-4 col-sm-4 col-xs-4">
-                           <div class="menu-button">
-							<span class="button fa fa-bars"></span>
-                               <div class="menu-list">
-                                   <asp:ListView ID="lstMenu" runat="server" DataSourceID="odsMenu" EnableModelValidation="True">
-                                    <ItemTemplate>
-                                        <li><%--<a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryNameEn") %></a>--%>
-                                            <a href='javascript:void(0);'><%# Eval("ProductCategoryNameEn") %></a>
-                                        <asp:HiddenField ID="hdnProductCategoryID" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
-                                        <asp:ListView ID="lstMenuSub" runat="server" DataSourceID="odsMenuSub" EnableModelValidation="True">
-                                           <ItemTemplate>
-                                                <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryNameEn") %></a></li>
-                                           </ItemTemplate>
-                                           <LayoutTemplate>
-                                                <ul class="menu-sub">
-                                                    <li runat="server" id="itemPlaceholder"></li>
-                                                </ul>
-                                           </LayoutTemplate>
-                                         </asp:ListView>
-                                         <asp:ObjectDataSource ID="odsMenuSub" runat="server" SelectMethod="ProductCategorySelectAll" TypeName="TLLib.ProductCategory">
-                                             <SelectParameters>
-                                                <asp:ControlParameter ControlID="hdnProductCategoryID" DefaultValue="0" 
-                                                    Name="parentID" PropertyName="Value" Type="Int32" />
-                                                <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
-                                                <asp:Parameter Name="IsShowOnMenu" Type="String" />
-                                                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
-                                             </SelectParameters>
-                                         </asp:ObjectDataSource>
-                                       </li>
-                                    </ItemTemplate>
-                                    <LayoutTemplate>
-                                        <ul>
-                                        <li runat="server" id="itemPlaceholder"></li>
-                                        </ul>
-                                    </LayoutTemplate>
-                                </asp:ListView>
-                                <asp:ObjectDataSource ID="odsMenu" runat="server" SelectMethod="ProductCategorySelectAll" TypeName="TLLib.ProductCategory">
-                                    <SelectParameters>
-                                        <asp:Parameter DefaultValue="0" Name="parentID" Type="Int32" />
-                                        <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
-                                        <asp:Parameter Name="IsShowOnMenu" Type="String" />
-                                        <asp:Parameter Name="IsShowOnHomePage" Type="String" />
-                                    </SelectParameters>
-                                 </asp:ObjectDataSource>
-                               </div>
-							<%--<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="menu-button">
+                                <span class="button fa fa-bars"></span>
+                                <div class="menu-list">
+                                    <asp:ListView ID="lstMenu" runat="server" DataSourceID="odsMenu" EnableModelValidation="True">
+                                        <ItemTemplate>
+                                            <li><%--<a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryNameEn") %></a>--%>
+                                                <a href='javascript:void(0);'><%# Eval("ProductCategoryNameEn") %></a>
+                                                <asp:HiddenField ID="hdnProductCategoryID" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
+                                                <asp:ListView ID="lstMenuSub" runat="server" DataSourceID="odsMenuSub" EnableModelValidation="True">
+                                                    <ItemTemplate>
+                                                        <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryNameEn") %></a></li>
+                                                    </ItemTemplate>
+                                                    <LayoutTemplate>
+                                                        <ul class="menu-sub">
+                                                            <li runat="server" id="itemPlaceholder"></li>
+                                                        </ul>
+                                                    </LayoutTemplate>
+                                                </asp:ListView>
+                                                <asp:ObjectDataSource ID="odsMenuSub" runat="server" SelectMethod="ProductCategorySelectAll" TypeName="TLLib.ProductCategory">
+                                                    <SelectParameters>
+                                                        <asp:ControlParameter ControlID="hdnProductCategoryID" DefaultValue="0"
+                                                            Name="parentID" PropertyName="Value" Type="Int32" />
+                                                        <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                                        <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                                        <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                                                    </SelectParameters>
+                                                </asp:ObjectDataSource>
+                                            </li>
+                                        </ItemTemplate>
+                                        <LayoutTemplate>
+                                            <ul>
+                                                <li runat="server" id="itemPlaceholder"></li>
+                                            </ul>
+                                        </LayoutTemplate>
+                                    </asp:ListView>
+                                    <asp:ObjectDataSource ID="odsMenu" runat="server" SelectMethod="ProductCategorySelectAll" TypeName="TLLib.ProductCategory">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="0" Name="parentID" Type="Int32" />
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </div>
+                                <%--<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                                 <asp:ListView ID="lstMenu" runat="server" DataSourceID="odsMenu" EnableModelValidation="True">
                                     <ItemTemplate>
                                         <div class="panel panel-default">
@@ -165,7 +165,7 @@
                                     </SelectParameters>
                                 </asp:ObjectDataSource>
 							</div>--%>
-						</div>
+                            </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-4">
                             <div class="home">
@@ -174,26 +174,29 @@
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-4">
                             <div class="head-right">
-                                 <div class="languge">
+                                <div class="languge">
                                     <%--<a href="#"><img src="assets/images/languge1.png" alt="" /></a>
                                     <a href="#"><img src="assets/images/languge2.png" alt="" /></a>--%>
                                     <asp:ImageButton ID="btnVN" runat="server" ImageUrl="~/assets/images/languge1.png"
-                                    OnClick="btnVN_Click" />
-                                <asp:ImageButton ID="btnEN" runat="server" ImageUrl="~/assets/images/languge2.png"
-                                    OnClick="btnEN_Click" />
+                                        OnClick="btnVN_Click" />
+                                    <asp:ImageButton ID="btnEN" runat="server" ImageUrl="~/assets/images/languge2.png"
+                                        OnClick="btnEN_Click" />
                                 </div>
                                 <div class="key">
-                                    <a class="key-click" href="javascript:void(0);"><img src="../assets/images/key.png" alt="" /></a>
+                                    <a class="key-click" href="javascript:void(0);">
+                                        <img src="../assets/images/key.png" alt="" /></a>
                                     <div class="number">
-                                        <span><asp:Label ID="lblSummary" runat="server" Text="0"></asp:Label></span>
+                                        <span>
+                                            <asp:Label ID="lblSummary" runat="server" Text="0"></asp:Label></span>
                                     </div>
                                     <div class="number-show">
                                         <div class="soluong">
                                             <asp:ListView ID="lstCart2" runat="server" EnableModelValidation="True" OnItemCommand="lstCart2_ItemCommand">
                                                 <ItemTemplate>
                                                     <asp:HiddenField ID="hdnCartProductID" Value='<%# Eval("ProductID") %>' runat="server" />
-                                                    <li><asp:LinkButton CommandName="Remove" OnClientClick="return confirm('Bạn muốn xóa sản phẩm này?')"
-                                                ID="lkbRemove" runat="server" Text="x"></asp:LinkButton><%# Eval("ProductName") %><span>x<%# Eval("Quantity") %></span> </li>
+                                                    <li>
+                                                        <asp:LinkButton CommandName="Remove" OnClientClick="return confirm('Bạn muốn xóa sản phẩm này?')"
+                                                            ID="lkbRemove" runat="server" Text="x"></asp:LinkButton><%# Eval("ProductName") %><span>x<%# Eval("Quantity") %></span> </li>
                                                 </ItemTemplate>
                                                 <LayoutTemplate>
                                                     <ul>
@@ -202,29 +205,30 @@
                                                 </LayoutTemplate>
                                             </asp:ListView>
                                         </div>
-                                       <div class="key-bnt">
-                                           <a type="button" data-toggle="modal" data-target="#muahang"href="#">BUY</a>
-                                       </div>
+                                        <div class="key-bnt">
+                                            <a type="button" data-toggle="modal" data-target="#muahang" href="#">BUY</a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="search-head">
-                                    <a class="search-click" href="javascript:void(0);"><img src="../assets/images/search.png" alt="" /></a>
+                                    <a class="search-click" href="javascript:void(0);">
+                                        <img src="../assets/images/search.png" alt="" /></a>
                                     <asp:Panel ID="Panel1" runat="server" DefaultButton="btnSearch">
                                         <div class="search">
-                                        <span class="del"><a href="javascript:void(0);">x</a></span>
-                                        <asp:Button ID="btnSearch" CssClass="search-btn" runat="server" OnClick="btnSearch_Click" />
-                                        <asp:TextBox ID="txtSearch" runat="server" CssClass="search-text"></asp:TextBox>
-                                        <asp:TextBoxWatermarkExtender ID="txtSearch_TextBoxWatermarkExtender" runat="server" Enabled="True"
-                                            WatermarkText="Nhập từ khóa tiềm kiếm.." TargetControlID="txtSearch">
-                                        </asp:TextBoxWatermarkExtender>
-                                    </div>
+                                            <span class="del"><a href="javascript:void(0);">x</a></span>
+                                            <asp:Button ID="btnSearch" CssClass="search-btn" runat="server" OnClick="btnSearch_Click" />
+                                            <asp:TextBox ID="txtSearch" runat="server" CssClass="search-text"></asp:TextBox>
+                                            <asp:TextBoxWatermarkExtender ID="txtSearch_TextBoxWatermarkExtender" runat="server" Enabled="True"
+                                                WatermarkText="Nhập từ khóa tiềm kiếm.." TargetControlID="txtSearch">
+                                            </asp:TextBoxWatermarkExtender>
+                                        </div>
                                     </asp:Panel>
                                 </div>
                             </div>
                         </div>
                     </div>
-			    </div>
-                <div  class="wrapper-head mobi-show">
+                </div>
+                <div class="wrapper-head mobi-show">
                     <div class="row">
                         <div class="col-xs-3 pad-0">
                             <div class="table-bg">
@@ -242,232 +246,238 @@
                                     OnClick="btnVN_Click" />
                                 <asp:ImageButton ID="btnen2" runat="server" ImageUrl="~/assets/images/languge2.png"
                                     OnClick="btnEN_Click" />
-                             </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-			</header>
-        <div class="clr">
-        </div>
-        <div id="main-content">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-        <div class="clr">
-        </div>
-        <footer>
-            <div class="wapper-footer">
-                <div class="container-bg">
-                    <div class="container">
-                        <div class="row isolist">
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 element-item">
-                                <div class="footer-box">
-                                    <h4>Contact Us</h4>
-                                    <p><span class="fa fa-map-marker"></span> 151A Nam Ky Khoi Nghia Street, Ward 6, District 3, Tp.HCM</p>
-                                    <p><span class="fa fa-phone"></span>1800 1747</p>
-                                    <p><span class="fa fa-phone"></span>+(84) 8 6686 4299</p>
-                                    <p><span class="fa fa-envelope"></span> <a href="mailTo:sale@peonyhome.com.vn">sale@peonyhome.com.vn</a></p>
+            </header>
+            <div class="clr">
+            </div>
+            <div id="main-content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="clr">
+            </div>
+            <footer>
+                <div class="wapper-footer">
+                    <div class="container-bg">
+                        <div class="container">
+                            <div class="row isolist">
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 element-item">
+                                    <div class="footer-box">
+                                        <h4>Contact Us</h4>
+                                        <p><span class="fa fa-map-marker"></span>151A Nam Ky Khoi Nghia Street, Ward 6, District 3, Tp.HCM</p>
+                                        <p><span class="fa fa-phone"></span>1800 1747</p>
+                                        <p><span class="fa fa-phone"></span>+(84) 8 6686 4299</p>
+                                        <p><span class="fa fa-envelope"></span><a href="mailTo:sale@peonyhome.com.vn">sale@peonyhome.com.vn</a></p>
+                                    </div>
                                 </div>
-				            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 element-item">
-                                <div class="footer-box">
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 element-item">
+                                    <div class="footer-box">
                                         <h4><a data-toggle="modal" data-target="#cuahang" href="#">OUR STORES</a></h4>
-                                    <ul>
-                                        <li>
-							                <a data-toggle="modal" data-target="#trusochinh"  href="#">- Head Office</a> 
-						                </li>
-						                <li>
-							                <a data-toggle="modal" data-target="#q10"  href="#">- Stores at district 10</a> 
-						                </li>
-						                <li>
-							                <a data-toggle="modal" data-target="#q3" href="#">- Stores at district 3</a>
-						                </li>
-                                        <li>
-							                <a data-toggle="modal" data-target="#q1" href="#">- Stores at district 1</a>
-						                </li>
-                                        <li>
-							                <a data-toggle="modal" data-target="#hanoi" href="#">- Stores at Ha Noi City</a>
-						                </li>
-                                        <li>
-							                <a data-toggle="modal" data-target="#nhamay" href="#">- Factory</a>
-						                </li>
-					                    </ul>
+                                        <ul>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#trusochinh" href="#">- Head Office</a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#q10" href="#">- Stores at district 10</a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#q3" href="#">- Stores at district 3</a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#q1" href="#">- Stores at district 1</a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#hanoi" href="#">- Stores at Ha Noi City</a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#danang" href="#">- Stores at Da Nang City</a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#nhamay" href="#">- Factory</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
                                 </div>
-					
-					    
-				            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 element-item">
-                                <div class="footer-box">
-                                    <h4>SUBSCRIBE TO OUR NEWS</h4>
-                                    <div class="mail">
-                                        <div class="wrap-email">
-                                            <div class="email-left">
-                                                <asp:TextBox ID="txtNewLetter" CssClass="email-text" runat="server" placeholder="Your email address..."></asp:TextBox>
-                                                <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator1"
-                                                    runat="server" ValidationGroup="EmailNewLetter" ControlToValidate="txtNewLetter"
-                                                    ErrorMessage="Sai định dạng email!" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                                                    Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="txtNewLetter"
-                                                    ValidationGroup="EmailNewLetter" runat="server" ErrorMessage="Chưa nhập Email!"
-                                                    Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </div>
-                                            <div class="email-right">
-                                                <asp:Button ID="btnNewLetter" CssClass="email-btn" ValidationGroup="EmailNewLetter"
-                                                    runat="server" Text="SUBSCRIBE NOW" OnClick="btnNewLetter_Click" />
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 element-item">
+                                    <div class="footer-box">
+                                        <h4>SUBSCRIBE TO OUR NEWS</h4>
+                                        <div class="mail">
+                                            <div class="wrap-email">
+                                                <div class="email-left">
+                                                    <asp:TextBox ID="txtNewLetter" CssClass="email-text" runat="server" placeholder="Your email address..."></asp:TextBox>
+                                                    <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator1"
+                                                        runat="server" ValidationGroup="EmailNewLetter" ControlToValidate="txtNewLetter"
+                                                        ErrorMessage="Sai định dạng email!" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                                        Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="txtNewLetter"
+                                                        ValidationGroup="EmailNewLetter" runat="server" ErrorMessage="Chưa nhập Email!"
+                                                        Display="Dynamic"></asp:RequiredFieldValidator>
+                                                </div>
+                                                <div class="email-right">
+                                                    <asp:Button ID="btnNewLetter" CssClass="email-btn" ValidationGroup="EmailNewLetter"
+                                                        runat="server" Text="SUBSCRIBE NOW" OnClick="btnNewLetter_Click" />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                 </div>
-					
-					    
-				            </div>
-                            <div class="col-lg-2 col-md-12 col-sm-6 col-xs-6 pad-right element-item">
-                                <div class="footer-box">
-                                <h4>FOLLOW US</h4>
-                                    <a class="ft-icon" href="https://www.facebook.com/Peony-Home-1582293285337948/"><span class="fa fa-facebook"></span></a>
-                                    <a class="ft-icon" href="https://www.instagram.com/peony_home/"><span class="fa fa fa-instagram"></span></a>
-                                    <%--<a class="ft-icon" href="#"><span class="fa fa-twitter"></span></a>
+                                <div class="col-lg-2 col-md-12 col-sm-6 col-xs-6 pad-right element-item">
+                                    <div class="footer-box">
+                                        <h4>FOLLOW US</h4>
+                                        <a class="ft-icon" href="https://www.facebook.com/Peony-Home-1582293285337948/"><span class="fa fa-facebook"></span></a>
+                                        <a class="ft-icon" href="https://www.instagram.com/peony_home/"><span class="fa fa fa-instagram"></span></a>
+                                        <%--<a class="ft-icon" href="#"><span class="fa fa-twitter"></span></a>
                                     <a class="ft-icon" href="#"><span class="fa fa-google-plus"></span></a>--%>
+                                    </div>
                                 </div>
-				            </div>              
+                            </div>
                         </div>
                     </div>
-               </div>
-              </div>
-            <div class="row">
-                <p class="copyright">Copyrights © 2016 Peonyhome. All right reserved. <a href="http://www.tranlegroup.com">Web design by</a> <a href="http://www.tranlegroup.com">Tran Le</a></p>
-            </div>
-         </footer>
-    </div>
-    <%-- =======popup thong-tin-khach-hang===== --%>
-    <div class="modal fade" id="muahang" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        Customer Information</h4>
                 </div>
-                <div class="modal-body body2">
-                    <p>
-                        Để thuận tiện hơn trong quá trình mua hàng của quý khách hàng, xin vui lòng điền
+                <div class="row">
+                    <p class="copyright">Copyrights © 2016 Peonyhome. All right reserved. <a href="http://www.tranlegroup.com">Web design by</a> <a href="http://www.tranlegroup.com">Tran Le</a></p>
+                </div>
+            </footer>
+        </div>
+        <%-- =======popup thong-tin-khach-hang===== --%>
+        <div class="modal fade" id="muahang" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Customer Information</h4>
+                    </div>
+                    <div class="modal-body body2">
+                        <p>
+                            Để thuận tiện hơn trong quá trình mua hàng của quý khách hàng, xin vui lòng điền
                         đầy đủ thông tin để chúng tôi có thể liên lạc với quý khách
-                    </p>
-                    <div class="row tb1">
-                        <div class="col-md-4">
-                            <asp:TextBox ID="txtFullName" CssClass="name" runat="server"></asp:TextBox>
-                            <asp:TextBoxWatermarkExtender ID="txtFullName_WatermarkExtender" runat="server" Enabled="True"
-                                WatermarkText="Full name" TargetControlID="txtFullName">
-                            </asp:TextBoxWatermarkExtender>
-                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator1" runat="server"
-                                Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtFullName"
-                                ErrorMessage="Information required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </p>
+                        <div class="row tb1">
+                            <div class="col-md-4">
+                                <asp:TextBox ID="txtFullName" CssClass="name" runat="server"></asp:TextBox>
+                                <asp:TextBoxWatermarkExtender ID="txtFullName_WatermarkExtender" runat="server" Enabled="True"
+                                    WatermarkText="Full name" TargetControlID="txtFullName">
+                                </asp:TextBoxWatermarkExtender>
+                                <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator1" runat="server"
+                                    Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtFullName"
+                                    ErrorMessage="Information required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="col-md-4">
+                                <asp:TextBox ID="txtEmail" CssClass="email" runat="server"></asp:TextBox>
+                                <asp:TextBoxWatermarkExtender ID="txtEmail_WatermarkExtender" runat="server" Enabled="True"
+                                    WatermarkText="Email" TargetControlID="txtEmail">
+                                </asp:TextBoxWatermarkExtender>
+                                <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator2"
+                                    runat="server" ValidationGroup="SendInfo" ControlToValidate="txtEmail" ErrorMessage="Email error!"
+                                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
+                                    ForeColor="Red"></asp:RegularExpressionValidator>
+                                <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator3" runat="server"
+                                    ValidationGroup="SendInfo" ControlToValidate="txtEmail" ErrorMessage="Information required!"
+                                    Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="col-md-4">
+                                <asp:TextBox ID="txtPhone" CssClass="phone" runat="server"></asp:TextBox>
+                                <asp:TextBoxWatermarkExtender ID="txtPhone_WatermarkExtender" runat="server" Enabled="True"
+                                    WatermarkText="Phone number" TargetControlID="txtPhone">
+                                </asp:TextBoxWatermarkExtender>
+                                <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator4" runat="server"
+                                    Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtPhone" ErrorMessage="Information required!"
+                                    ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <asp:TextBox ID="txtEmail" CssClass="email" runat="server"></asp:TextBox>
-                            <asp:TextBoxWatermarkExtender ID="txtEmail_WatermarkExtender" runat="server" Enabled="True"
-                                WatermarkText="Email" TargetControlID="txtEmail">
-                            </asp:TextBoxWatermarkExtender>
-                            <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator2"
-                                runat="server" ValidationGroup="SendInfo" ControlToValidate="txtEmail" ErrorMessage="Email error!"
-                                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
-                                ForeColor="Red"></asp:RegularExpressionValidator>
-                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator3" runat="server"
-                                ValidationGroup="SendInfo" ControlToValidate="txtEmail" ErrorMessage="Information required!"
-                                Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <div class="row tb1">
+                            <div class="col-md-12">
+                                <asp:TextBox ID="txtAddress" CssClass="noidung" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                <asp:TextBoxWatermarkExtender ID="txtAddress_WatermarkExtender" runat="server" Enabled="True"
+                                    WatermarkText="Address" TargetControlID="txtAddress">
+                                </asp:TextBoxWatermarkExtender>
+                                <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator6" runat="server"
+                                    Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtAddress" ErrorMessage="Thông tin bắt buộc!"
+                                    ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <asp:TextBox ID="txtPhone" CssClass="phone" runat="server"></asp:TextBox>
-                            <asp:TextBoxWatermarkExtender ID="txtPhone_WatermarkExtender" runat="server" Enabled="True"
-                                WatermarkText="Phone number" TargetControlID="txtPhone">
-                            </asp:TextBoxWatermarkExtender>
-                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator4" runat="server"
-                                Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtPhone" ErrorMessage="Information required!"
-                                ForeColor="Red"></asp:RequiredFieldValidator>
+                        <div class="row tb1">
+                            <div class="col-md-12">
+                                <asp:TextBox ID="txtContent" CssClass="noidung" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                <asp:TextBoxWatermarkExtender ID="txtContent_WatermarkExtender" runat="server" Enabled="True"
+                                    WatermarkText="Message" TargetControlID="txtContent">
+                                </asp:TextBoxWatermarkExtender>
+                                <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator5" runat="server"
+                                    Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtContent" ErrorMessage="Information required!"
+                                    ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row tb1">
-                        <div class="col-md-12">
-                            <asp:TextBox ID="txtAddress" CssClass="noidung" runat="server" TextMode="MultiLine"></asp:TextBox>
-                            <asp:TextBoxWatermarkExtender ID="txtAddress_WatermarkExtender" runat="server" Enabled="True"
-                                WatermarkText="Address" TargetControlID="txtAddress">
-                            </asp:TextBoxWatermarkExtender>
-                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator6" runat="server"
-                                Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtAddress" ErrorMessage="Thông tin bắt buộc!"
-                                ForeColor="Red"></asp:RequiredFieldValidator>
+                        <div class="bnt">
+                            <asp:Button ID="btnGui" CssClass="btn-form" runat="server" Text="Xác Nhận" OnClick="btnGui_Click"
+                                ValidationGroup="SendInfo" />
                         </div>
-                    </div>
-                    <div class="row tb1">
-                        <div class="col-md-12">
-                            <asp:TextBox ID="txtContent" CssClass="noidung" runat="server" TextMode="MultiLine"></asp:TextBox>
-                            <asp:TextBoxWatermarkExtender ID="txtContent_WatermarkExtender" runat="server" Enabled="True"
-                                WatermarkText="Message" TargetControlID="txtContent">
-                            </asp:TextBoxWatermarkExtender>
-                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator5" runat="server"
-                                Display="Dynamic" ValidationGroup="SendInfo" ControlToValidate="txtContent" ErrorMessage="Information required!"
-                                ForeColor="Red"></asp:RequiredFieldValidator>
-                        </div>
-                    </div>
-                    <div class="bnt">
-                        <asp:Button ID="btnGui" CssClass="btn-form" runat="server" Text="Xác Nhận" OnClick="btnGui_Click"
-                            ValidationGroup="SendInfo" />
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <%-- ==========popup cua-hang=========== --%>
-    <div class="modal fade" id="cuahang" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="H3">
-                        OUR STORES</h4>
-                </div>
-                <div class="modal-body">
-                    <ul>
-                        <li><a data-toggle="modal" data-target="#trusochinh" href="#">Head Office</a></li>
-                        <li><a data-toggle="modal" data-target="#q10" href="#">Stores at district 10</a></li>
-                        <li><a data-toggle="modal" data-target="#q3" href="#">Stores at district 3</a></li>
-                        <li><a data-toggle="modal" data-target="#q1" href="#">Stores at district 1</a></li>
-                        <li><a data-toggle="modal" data-target="#nhamay" href="#">Factory</a></li>
-                    </ul>
+        <%-- ==========popup cua-hang=========== --%>
+        <div class="modal fade" id="cuahang" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="H3">OUR STORES</h4>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li><a data-toggle="modal" data-target="#trusochinh" href="#">Head Office</a></li>
+                            <li><a data-toggle="modal" data-target="#q10" href="#">Stores at district 10</a></li>
+                            <li><a data-toggle="modal" data-target="#q3" href="#">Stores at district 3</a></li>
+                            <li><a data-toggle="modal" data-target="#q1" href="#">Stores at district 1</a></li>
+                            <li><a data-toggle="modal" data-target="#hanoi" href="#">Stores at Ha Noi City</a></li>
+                            <li><a data-toggle="modal" data-target="#danang" href="#">Stores at Da Nang City</a></li>
+                            <li><a data-toggle="modal" data-target="#nhamay" href="#">Factory</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <%-- ==========popup tru so chinh=========== --%>
-    <div class="modal fade" id="trusochinh" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="H7">
-                        Head Office</h4>
-                </div>
-                <div class="modal-body body1">
-                    <div class="row tb">
-                        <div class="col-md-8 pad-0">
-                            <p class="title-q">
-                                peonyhome office</p>
-                            <p>
-                                <span class="fa fa-map-marker"></span>Room 49 , Floor 4 , The Prince Residence 17-19-21
-                                Nguyễn Văn Trỗi</p>
-                            <p>
-                                <span class="glyphicon glyphicon-phone-alt"></span>1800 1747</p>
-                            <p>
-                                <span class="fa fa-envelope"></span><a href="mailTo:peonyhomevietnam@gmail.com">peonyhomevietnam@gmail.com</a></p>
-                        </div>
-                        <div class="col-md-4 pad-0">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.248137365532!2d106.67855031534769!3d10.79229759231079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528d494b434e3%3A0x26340b34556a1fce!2sThe+Prince+Residence!5e0!3m2!1sen!2s!4v1480055563916"
-                                width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
-                        </div>
+        <%-- ==========popup tru so chinh=========== --%>
+        <div class="modal fade" id="trusochinh" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="H7">Head Office</h4>
                     </div>
-                    <%--<div class="row tb">
+                    <div class="modal-body body1">
+                        <div class="row tb">
+                            <div class="col-md-8 pad-0">
+                                <p class="title-q">
+                                    peonyhome office
+                                </p>
+                                <p>
+                                    <span class="fa fa-map-marker"></span>Room 49 , Floor 4 , The Prince Residence 17-19-21
+                                Nguyễn Văn Trỗi
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-phone-alt"></span>1800 1747
+                                </p>
+                                <p>
+                                    <span class="fa fa-envelope"></span><a href="mailTo:peonyhomevietnam@gmail.com">peonyhomevietnam@gmail.com</a>
+                                </p>
+                            </div>
+                            <div class="col-md-4 pad-0">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.248137365532!2d106.67855031534769!3d10.79229759231079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528d494b434e3%3A0x26340b34556a1fce!2sThe+Prince+Residence!5e0!3m2!1sen!2s!4v1480055563916"
+                                    width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <%--<div class="row tb">
                         <div class="col-md-8 pad-0">
                             <p class="title-q">
                                 lavender accessories - home’s craft</p>
@@ -485,39 +495,42 @@
                                 width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
                         </div>
                     </div>--%>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <%-- ==========popup cua-hang-q10=========== --%>
-    <div class="modal fade" id="q10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="H1">
-                        Stores at district 10</h4>
-                </div>
-                <div class="modal-body body1">
-                    <div class="row tb">
-                        <div class="col-md-8 pad-0">
-                            <p class="title-q">
-                                peonyhome office</p>
-                            <p>
-                                <span class="fa fa-map-marker"></span>300 Ngo Gia Tu Street, Ward 4, District 10,
-                                Tp.HCM</p>
-                            <p>
-                                <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 2241 0666</p>
-                            <p>
-                                <span class="fa fa-envelope"></span><a href="mailTo:peonyhomevietnam@gmail.com">peonyhomevietnam@gmail.com</a></p>
-                        </div>
-                        <div class="col-md-4 pad-0">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6258411395893!2d106.66877731526506!3d10.763292262378016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ee3fcf442b1%3A0x441e5c5c3f7603a3!2zMzAwIE5nw7QgR2lhIFThu7EsIHBoxrDhu51uZyA0LCBRdeG6rW4gMTAsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1465199949024"
-                                width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
-                        </div>
+        <%-- ==========popup cua-hang-q10=========== --%>
+        <div class="modal fade" id="q10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="H1">Stores at district 10</h4>
                     </div>
-                    <%--<div class="row tb">
+                    <div class="modal-body body1">
+                        <div class="row tb">
+                            <div class="col-md-8 pad-0">
+                                <p class="title-q">
+                                    PEONY HOME FURNITURE 
+                                </p>
+                                <p>
+                                    <span class="fa fa-map-marker"></span>300 Ngo Gia Tu Street, Ward 4, District 10,
+                                Tp.HCM
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-phone-alt"></span>+(84) 2242 1666
+                                </p>
+                                <p>
+                                    <span class="fa fa-envelope"></span><a href="mailTo:sale@peonyhome.com.vn">sale@peonyhome.com.vn</a>
+                                </p>
+                            </div>
+                            <div class="col-md-4 pad-0">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6258411395893!2d106.66877731526506!3d10.763292262378016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ee3fcf442b1%3A0x441e5c5c3f7603a3!2zMzAwIE5nw7QgR2lhIFThu7EsIHBoxrDhu51uZyA0LCBRdeG6rW4gMTAsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1465199949024"
+                                    width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <%--<div class="row tb">
                         <div class="col-md-8 pad-0">
                             <p class="title-q">
                                 lavender accessories - home’s craft</p>
@@ -535,203 +548,249 @@
                                 width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
                         </div>
                     </div>--%>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <%-- ==========popup cua-hang-q3=========== --%>
-    <div class="modal fade" id="q3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="H2">
-                        Stores at district 3</h4>
-                </div>
-                <div class="modal-body body1">
-                    <div class="row tb">
-                        <div class="col-md-8 pad-0">
-                            <p class="title-q">
-                                peony home</p>
-                            <p>
-                                <span class="fa fa-map-marker"></span>151A Nam Ky Khoi Nghia Street, Ward 6, District
-                                3, Tp.HCM</p>
-                            <p>
-                                <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 6686 4299</p>
-                            <p>
-                                <span class="fa fa-envelope"></span><a href="mailTo:peonyhomevietnam@gmail.com">peonyhomevietnam@gmail.com</a></p>
-                        </div>
-                        <div class="col-md-4 pad-0">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.384466279072!2d106.6901483152651!3d10.781837262040916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3118de385f%3A0xe483b58212a683c3!2zMTUxQSBOYW0gS-G7syBLaOG7n2kgTmdoxKlhLCBwaMaw4budbmcgNiwgUXXhuq1uIDMsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1462869293846"
-                                width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
+        <%-- ==========popup cua-hang-q3=========== --%>
+        <div class="modal fade" id="q3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="H2">Stores at district 3</h4>
+                    </div>
+                    <div class="modal-body body1">
+                        <div class="row tb">
+                            <div class="col-md-8 pad-0">
+                                <p class="title-q">
+                                    peony home
+                                </p>
+                                <p>
+                                    <span class="fa fa-map-marker"></span>151A Nam Ky Khoi Nghia Street, Ward 6, District
+                                3, Tp.HCM
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 6686 4299
+                                </p>
+                                <p>
+                                    <span class="fa fa-envelope"></span><a href="mailTo:sale@peonyhome.com.vn">sale@peonyhome.com.vn</a>
+                                </p>
+                            </div>
+                            <div class="col-md-4 pad-0">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.384466279072!2d106.6901483152651!3d10.781837262040916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3118de385f%3A0xe483b58212a683c3!2zMTUxQSBOYW0gS-G7syBLaOG7n2kgTmdoxKlhLCBwaMaw4budbmcgNiwgUXXhuq1uIDMsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1462869293846"
+                                    width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <%-- ==========popup cua-hang-q1=========== --%>
-    <div class="modal fade" id="q1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="H4">
-                        Stores at district 3</h4>
-                </div>
-                <div class="modal-body body1">
-                    <div class="row tb">
-                        <div class="col-md-8 pad-0">
-                            <p class="title-q">
-                                peony home</p>
-                            <p>
-                                <span class="fa fa-map-marker"></span>12C Nguyen Thi Minh Khai Street, Da Kao Ward,
-                                District 1, Tp.HCM</p>
-                            <p>
-                                <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 2241 0666</p>
-                            <p>
-                                <span class="fa fa-envelope"></span><a href="mailTo:peonyhomevietnam@gmail.com">peonyhomevietnam@gmail.com</a></p>
-                        </div>
-                        <div class="col-md-4 pad-0">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3025177467453!2d106.70007931526499!3d10.788126261926438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4adb09ee7d%3A0x1686227e6be6863b!2zMTJDIE5ndXnhu4VuIFRo4buLIE1pbmggS2hhaSwgxJBhIEthbywgUXXhuq1uIDEsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1462869515686"
-                                width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
+        <%-- ==========popup cua-hang-q1=========== --%>
+        <div class="modal fade" id="q1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="H4">Stores at district 1</h4>
+                    </div>
+                    <div class="modal-body body1">
+                        <div class="row tb">
+                            <div class="col-md-8 pad-0">
+                                <p class="title-q">
+                                    PEONY HOME OUTLET
+                                </p>
+                                <p>
+                                    <span class="fa fa-map-marker"></span>12C Nguyen Thi Minh Khai Street, Da Kao Ward,
+                                District 1, Tp.HCM
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 2241 0666
+                                </p>
+                                <p>
+                                    <span class="fa fa-envelope"></span><a href="mailTo:sale@peonyhome.com.vn">sale@peonyhome.com.vn</a>
+                                </p>
+                            </div>
+                            <div class="col-md-4 pad-0">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3025177467453!2d106.70007931526499!3d10.788126261926438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4adb09ee7d%3A0x1686227e6be6863b!2zMTJDIE5ndXnhu4VuIFRo4buLIE1pbmggS2hhaSwgxJBhIEthbywgUXXhuq1uIDEsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1462869515686"
+                                    width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <%-- ==========popup cua-hang-ha-noi=========== --%>
-    <div class="modal fade" id="hanoi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="H6">
-                        Stores at Ha Noi City</h4>
-                </div>
-                <div class="modal-body body1">
-                    <div class="row tb">
-                        <div class="col-md-8 pad-0">
-                            <p class="title-q">
-                                peony home ha noi</p>
-                            <p>
-                                <span class="fa fa-map-marker"></span>36C Ly Nam De Street, Hoan Kiem Ward, Ha Noi City, Viet Nam</p>
-                            <p>
-                                <span class="glyphicon glyphicon-phone-alt"></span>+(84) 4 6653 3300</p>
-                            <p>
-                                <span class="fa fa-envelope"></span><a href="mailTo:sale@peonyhome.com.vn">sale@peonyhome.com.vn</a></p>
-                        </div>
-                        <div class="col-md-4 pad-0">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.9904781196824!2d105.84235431538958!3d21.033066993006067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abbdbb6866f9%3A0x9e9d1df98bea561c!2zMzRCIEzDvSBOYW0gxJDhur8sIEPhu61hIMSQw7RuZywgQmEgxJDDrG5oLCBIw6AgTuG7mWksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1474008584205" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <%-- ==========popup cua-hang-ha-noi=========== --%>
+        <div class="modal fade" id="hanoi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="H6">Stores at Ha Noi City</h4>
+                    </div>
+                    <div class="modal-body body1">
+                        <div class="row tb">
+                            <div class="col-md-8 pad-0">
+                                <p class="title-q">
+                                    peony home ha noi
+                                </p>
+                                <p>
+                                    <span class="fa fa-map-marker"></span>36C Ly Nam De Street, Hoan Kiem Ward, Ha Noi City, Viet Nam
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-phone-alt"></span>+(84) 4 6653 3300
+                                </p>
+                                <p>
+                                    <span class="fa fa-envelope"></span><a href="mailTo:sale@peonyhome.com.vn">sale@peonyhome.com.vn</a>
+                                </p>
+                            </div>
+                            <div class="col-md-4 pad-0">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.9904781196824!2d105.84235431538958!3d21.033066993006067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abbdbb6866f9%3A0x9e9d1df98bea561c!2zMzRCIEzDvSBOYW0gxJDhur8sIEPhu61hIMSQw7RuZywgQmEgxJDDrG5oLCBIw6AgTuG7mWksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1474008584205" width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <%-- ==========popup nha may=========== --%>
-    <div class="modal fade" id="nhamay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="H5">
-                        Factory</h4>
-                </div>
-                <div class="modal-body body1">
-                    <div class="row tb">
-                        <div class="col-md-8 pad-0">
-                            <p class="title-q">
-                                Lavender's factory</p>
-                            <p>
-                                <span class="fa fa-map-marker"></span>100D4 Long Lam Street, Long Điền Village,
-                                Tp.Ba Ria</p>
-                            <p>
-                                <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 2241 0666</p>
-                            <p>
-                                <span class="fa fa-envelope"></span><a href="mailTo:peonyhomevietnam@gmail.com">peonyhomevietnam@gmail.com</a></p>
-                        </div>
-                        <div class="col-md-4 pad-0">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3025177467453!2d106.70007931526499!3d10.788126261926438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4adb09ee7d%3A0x1686227e6be6863b!2zMTJDIE5ndXnhu4VuIFRo4buLIE1pbmggS2hhaSwgxJBhIEthbywgUXXhuq1uIDEsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1462869515686"
-                                width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
+        <%-- ==========popup cua-hang-da-nang=========== --%>
+        <div class="modal fade" id="danang" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="H8">Stores at Da Nang City</h4>
+                    </div>
+                    <div class="modal-body body1">
+                        <div class="row tb">
+                            <div class="col-md-8 pad-0">
+                                <p class="title-q">
+                                    peony home da nang
+                                </p>
+                                <p>
+                                    <span class="fa fa-map-marker"></span>21 Hoang Van Thu Str, Hai Chau District, Da Nang, Viet Nam 
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-phone-alt"></span>+(84) 236 277 977 
+                                </p>
+                                <p>
+                                    <span class="fa fa-envelope"></span><a href="mailTo:sale@peonyhome.com.vn">sale@peonyhome.com.vn</a>
+                                </p>
+                            </div>
+                            <div class="col-md-4 pad-0">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.0568781018924!2d108.22036831539346!3d16.062537988885055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219ccde074fbd%3A0x5924d7b6737aed42!2zMjEgSG_DoG5nIFbEg24gVGjhu6UsIFBoxrDhu5tjIE5pbmgsIFEuIEjhuqNpIENow6J1LCDEkMOgIE7hurVuZywgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1487650473364"
+                                    width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <%-- mobi --%>
-    <div id="" class="wrapper-head wrappper-mobile">
-        <div id="tabs" class="table-head">
-            <div class="head-menu">
-                <ul>
-                    <li><a href="#tabs-1">Menu</a></li>
-                    <li><a href="#tabs-2">
-                        <img src="../assets/images/search.png" alt="" /></a></li>
-                    <li class="key"><a href="#tabs-3">
-                        <img src="../assets/images/key.png" alt="" /></a>
-                        <div class="number">
-                            <span>
-                                <asp:Label ID="lblSummary2" runat="server" Text="0"></asp:Label></span>
-                        </div>
-                    </li>
-                </ul>
-                <a class="closea" href="#mobileMenu">X</a>
-            </div>
-            <div class="menu-content">
-                <div id="tabs-1" class="tab-content">
-                    <div class="menu-list">
-                        <asp:ListView ID="lstMenuMobile" runat="server" DataSourceID="odsMenuMobile" EnableModelValidation="True">
-                            <ItemTemplate>
-                                <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
-                                    <%# Eval("ProductCategoryNameEn") %></a>
-                                    <asp:HiddenField ID="hdnProductCategoryID" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
-                                    <asp:ListView ID="lstMenuSubMobile" runat="server" DataSourceID="odsMenuSubMobile"
-                                        EnableModelValidation="True">
-                                        <ItemTemplate>
-                                            <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'>
-                                                <%# Eval("ProductCategoryNameEn") %></a></li>
-                                        </ItemTemplate>
-                                        <LayoutTemplate>
-                                            <ul class="menu-sub1">
-                                                <li runat="server" id="itemPlaceholder"></li>
-                                            </ul>
-                                        </LayoutTemplate>
-                                    </asp:ListView>
-                                    <asp:ObjectDataSource ID="odsMenuSubMobile" runat="server" SelectMethod="ProductCategorySelectAll"
-                                        TypeName="TLLib.ProductCategory">
-                                        <SelectParameters>
-                                            <asp:ControlParameter ControlID="hdnProductCategoryID" DefaultValue="0" Name="parentID"
-                                                PropertyName="Value" Type="Int32" />
-                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
-                                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
-                                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
-                                        </SelectParameters>
-                                    </asp:ObjectDataSource>
-                                </li>
-                            </ItemTemplate>
-                            <LayoutTemplate>
-                                <ul>
-                                    <li runat="server" id="itemPlaceholder"></li>
-                                </ul>
-                            </LayoutTemplate>
-                        </asp:ListView>
-                        <asp:ObjectDataSource ID="odsMenuMobile" runat="server" SelectMethod="ProductCategorySelectAll"
-                            TypeName="TLLib.ProductCategory">
-                            <SelectParameters>
-                                <asp:Parameter DefaultValue="0" Name="parentID" Type="Int32" />
-                                <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
-                                <asp:Parameter Name="IsShowOnMenu" Type="String" />
-                                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
-                            </SelectParameters>
-                        </asp:ObjectDataSource>
+        <%-- ==========popup nha may=========== --%>
+        <div class="modal fade" id="nhamay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="H5">Factory</h4>
                     </div>
-                    <%--<div class="tab-panel-group panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+                    <div class="modal-body body1">
+                        <div class="row tb">
+                            <div class="col-md-8 pad-0">
+                                <p class="title-q">
+                                    Lavender's factory
+                                </p>
+                                <p>
+                                    <span class="fa fa-map-marker"></span>100D4 Long Lam Street, Long Điền Village,
+                                Tp.Ba Ria
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-phone-alt"></span>+(84) 8 2241 0666
+                                </p>
+                                <p>
+                                    <span class="fa fa-envelope"></span><a href="mailTo:peonyhomevietnam@gmail.com">peonyhomevietnam@gmail.com</a>
+                                </p>
+                            </div>
+                            <div class="col-md-4 pad-0">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3025177467453!2d106.70007931526499!3d10.788126261926438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4adb09ee7d%3A0x1686227e6be6863b!2zMTJDIE5ndXnhu4VuIFRo4buLIE1pbmggS2hhaSwgxJBhIEthbywgUXXhuq1uIDEsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1462869515686"
+                                    width="190" height="130" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%-- mobi --%>
+        <div id="" class="wrapper-head wrappper-mobile">
+            <div id="tabs" class="table-head">
+                <div class="head-menu">
+                    <ul>
+                        <li><a href="#tabs-1">Menu</a></li>
+                        <li><a href="#tabs-2">
+                            <img src="../assets/images/search.png" alt="" /></a></li>
+                        <li class="key"><a href="#tabs-3">
+                            <img src="../assets/images/key.png" alt="" /></a>
+                            <div class="number">
+                                <span>
+                                    <asp:Label ID="lblSummary2" runat="server" Text="0"></asp:Label></span>
+                            </div>
+                        </li>
+                    </ul>
+                    <a class="closea" href="#mobileMenu">X</a>
+                </div>
+                <div class="menu-content">
+                    <div id="tabs-1" class="tab-content">
+                        <div class="menu-list">
+                            <asp:ListView ID="lstMenuMobile" runat="server" DataSourceID="odsMenuMobile" EnableModelValidation="True">
+                                <ItemTemplate>
+                                    <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                        <%# Eval("ProductCategoryNameEn") %></a>
+                                        <asp:HiddenField ID="hdnProductCategoryID" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
+                                        <asp:ListView ID="lstMenuSubMobile" runat="server" DataSourceID="odsMenuSubMobile"
+                                            EnableModelValidation="True">
+                                            <ItemTemplate>
+                                                <li><a href='<%# progressTitle(Eval("ProductCategoryNameEn")) + "-pci-" + Eval("ParentID") + "-pri-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                                    <%# Eval("ProductCategoryNameEn") %></a></li>
+                                            </ItemTemplate>
+                                            <LayoutTemplate>
+                                                <ul class="menu-sub1">
+                                                    <li runat="server" id="itemPlaceholder"></li>
+                                                </ul>
+                                            </LayoutTemplate>
+                                        </asp:ListView>
+                                        <asp:ObjectDataSource ID="odsMenuSubMobile" runat="server" SelectMethod="ProductCategorySelectAll"
+                                            TypeName="TLLib.ProductCategory">
+                                            <SelectParameters>
+                                                <asp:ControlParameter ControlID="hdnProductCategoryID" DefaultValue="0" Name="parentID"
+                                                    PropertyName="Value" Type="Int32" />
+                                                <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                                <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                                            </SelectParameters>
+                                        </asp:ObjectDataSource>
+                                    </li>
+                                </ItemTemplate>
+                                <LayoutTemplate>
+                                    <ul>
+                                        <li runat="server" id="itemPlaceholder"></li>
+                                    </ul>
+                                </LayoutTemplate>
+                            </asp:ListView>
+                            <asp:ObjectDataSource ID="odsMenuMobile" runat="server" SelectMethod="ProductCategorySelectAll"
+                                TypeName="TLLib.ProductCategory">
+                                <SelectParameters>
+                                    <asp:Parameter DefaultValue="0" Name="parentID" Type="Int32" />
+                                    <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                    <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                    <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                                </SelectParameters>
+                            </asp:ObjectDataSource>
+                        </div>
+                        <%--<div class="tab-panel-group panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
                         <asp:ListView ID="lstMenuMobile" runat="server" DataSourceID="odsMenuMobile" EnableModelValidation="True">
                             <ItemTemplate>
                                 <div class="panel panel-default">
@@ -788,286 +847,285 @@
                             </SelectParameters>
                         </asp:ObjectDataSource>
                     </div>--%>
-                </div>
-                <div id="tabs-2" class="tab-content">
-                    <div class="tab-search search">
-                        <span class="del"><a href="javascript:void(0);">x</a></span>
-                        <asp:Panel ID="Panel2" runat="server" DefaultButton="btnSearch2">
-                            <div class="search">
-                                <span class="del"><a href="javascript:void(0);">x</a></span>
-                                <asp:Button ID="btnSearch2" CssClass="search-btn" runat="server" OnClick="btnSearch2_Click" />
-                                <asp:TextBox ID="txtSearch2" runat="server" CssClass="search-text"></asp:TextBox>
-                                <asp:TextBoxWatermarkExtender ID="txtSearch2_TextBoxWatermarkExtender" runat="server"
-                                    Enabled="True" WatermarkText="Nhập từ khóa tiềm kiếm.." TargetControlID="txtSearch2">
-                                </asp:TextBoxWatermarkExtender>
-                            </div>
-                        </asp:Panel>
                     </div>
-                </div>
-                <div id="tabs-3" class="tab-content">
-                    <div class="tab-number-show number-show">
-                        <div class="soluong">
-                            <asp:ListView ID="lstCart" runat="server" EnableModelValidation="True" OnItemCommand="lstCart_ItemCommand">
-                                <ItemTemplate>
-                                    <li>
-                                        <asp:HiddenField ID="hdnCartProductID" Value='<%# Eval("ProductID") %>' runat="server" />
-                                        <asp:LinkButton CommandName="Remove" OnClientClick="return confirm('Bạn muốn xóa sản phẩm này?')"
-                                            ID="lkbRemove" runat="server" Text="x"></asp:LinkButton><%# Eval("ProductName") %><span>x<%# Eval("Quantity")%></span>
-                                    </li>
-                                </ItemTemplate>
-                                <LayoutTemplate>
-                                    <ul>
-                                        <span runat="server" id="itemPlaceholder" />
-                                    </ul>
-                                </LayoutTemplate>
-                            </asp:ListView>
-                            <asp:ObjectDataSource ID="odsCart" runat="server" SelectMethod="Cart" TypeName="ShoppingCart">
-                            </asp:ObjectDataSource>
+                    <div id="tabs-2" class="tab-content">
+                        <div class="tab-search search">
+                            <span class="del"><a href="javascript:void(0);">x</a></span>
+                            <asp:Panel ID="Panel2" runat="server" DefaultButton="btnSearch2">
+                                <div class="search-sub">
+                                    <span class="del"><a href="javascript:void(0);">x</a></span>
+                                    <asp:Button ID="btnSearch2" CssClass="search-btn" runat="server" OnClick="btnSearch2_Click" />
+                                    <asp:TextBox ID="txtSearch2" runat="server" CssClass="search-text"></asp:TextBox>
+                                    <asp:TextBoxWatermarkExtender ID="txtSearch2_TextBoxWatermarkExtender" runat="server"
+                                        Enabled="True" WatermarkText="Nhập từ khóa tiềm kiếm.." TargetControlID="txtSearch2">
+                                    </asp:TextBoxWatermarkExtender>
+                                </div>
+                            </asp:Panel>
                         </div>
-                        <div class="key-bnt">
-                            <a type="button" data-toggle="modal" data-target="#muahang" href="#">BUY</a>
+                    </div>
+                    <div id="tabs-3" class="tab-content">
+                        <div class="tab-number-show number-show">
+                            <div class="soluong">
+                                <asp:ListView ID="lstCart" runat="server" EnableModelValidation="True" OnItemCommand="lstCart_ItemCommand">
+                                    <ItemTemplate>
+                                        <li>
+                                            <asp:HiddenField ID="hdnCartProductID" Value='<%# Eval("ProductID") %>' runat="server" />
+                                            <asp:LinkButton CommandName="Remove" OnClientClick="return confirm('Bạn muốn xóa sản phẩm này?')"
+                                                ID="lkbRemove" runat="server" Text="x"></asp:LinkButton><%# Eval("ProductName") %><span>x<%# Eval("Quantity")%></span>
+                                        </li>
+                                    </ItemTemplate>
+                                    <LayoutTemplate>
+                                        <ul>
+                                            <span runat="server" id="itemPlaceholder" />
+                                        </ul>
+                                    </LayoutTemplate>
+                                </asp:ListView>
+                                <asp:ObjectDataSource ID="odsCart" runat="server" SelectMethod="Cart" TypeName="ShoppingCart"></asp:ObjectDataSource>
+                            </div>
+                            <div class="key-bnt">
+                                <a type="button" data-toggle="modal" data-target="#muahang" href="#">BUY</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="runScript" runat="server">
-    </div>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="../assets/js/isotope.pkgd.min.js"></script>
-    <script src="../assets/js/jquery.textheight.js"></script>
-    <script src="../assets/js/jquery.nivo.slider.pack.js"></script>
-    <script src="../assets/js/slick.min.js"></script>
-    <script src="../assets/js/jquery.viewload.js"></script>
-    <script src="../assets/js/jquery.fancybox.pack.js"></script>
-    <script type="text/javascript">
-         function pageLoad() {
-            myfunload();
-        }
-        $(window).load(function () {
-            $('#slider').nivoSlider({
-                pauseOnHover: false
+        <div id="runScript" runat="server">
+        </div>
+        <script src="../assets/js/bootstrap.min.js"></script>
+        <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="../assets/js/isotope.pkgd.min.js"></script>
+        <script src="../assets/js/jquery.textheight.js"></script>
+        <script src="../assets/js/jquery.nivo.slider.pack.js"></script>
+        <script src="../assets/js/slick.min.js"></script>
+        <script src="../assets/js/jquery.viewload.js"></script>
+        <script src="../assets/js/jquery.fancybox.pack.js"></script>
+        <script type="text/javascript">
+            function pageLoad() {
+                myfunload();
+            }
+            $(window).load(function () {
+                $('#slider').nivoSlider({
+                    pauseOnHover: false
+                });
             });
-        });
-        $(document).ready(function () {
-            myfunload();
-//            $(".link-show a").click(function () {
-//                $(this).toggleClass("current");
-//                var idboxs = $(this).attr("href");
-//                if ($(this).hasClass("current")) {
-//                    $(idboxs).height("100%");
-//                    var offset = $(this).offset();
-//                    $("html, body").stop(true, true).animate({ scrollTop: (offset.top) }, 500);
-//                } else {
-//                    $("html, body").stop(true, true).animate({ scrollTop: 0 }, 500, function () {
-//                        $(idboxs).height(0);
-//                    });
-//                }
-//                return false;
-//            });
-            $(".link-pro").click(function () {
-                var idboxs = $(this).attr("href");
-                var offset = $(idboxs).offset();
-                $("html, body").stop(true, true).animate({ scrollTop: offset.top }, 500);
-                return false;
+            $(document).ready(function () {
+                myfunload();
+                //            $(".link-show a").click(function () {
+                //                $(this).toggleClass("current");
+                //                var idboxs = $(this).attr("href");
+                //                if ($(this).hasClass("current")) {
+                //                    $(idboxs).height("100%");
+                //                    var offset = $(this).offset();
+                //                    $("html, body").stop(true, true).animate({ scrollTop: (offset.top) }, 500);
+                //                } else {
+                //                    $("html, body").stop(true, true).animate({ scrollTop: 0 }, 500, function () {
+                //                        $(idboxs).height(0);
+                //                    });
+                //                }
+                //                return false;
+                //            });
+                $(".link-pro").click(function () {
+                    var idboxs = $(this).attr("href");
+                    var offset = $(idboxs).offset();
+                    $("html, body").stop(true, true).animate({ scrollTop: offset.top }, 500);
+                    return false;
+                });
+                $(".fancybox").fancybox({
+                    wrapCSS: 'zoom-fancybox',
+                    padding: 10,
+                    openEffect: 'elastic',
+                    closeEffect: 'elastic'
+                });
+                $('.central-bot').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    slide: '.slide',
+                    prevArrow: false,
+                    nextArrow: false,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                });
             });
-            $(".fancybox").fancybox({
-                wrapCSS: 'zoom-fancybox',
-                padding: 10,
-                openEffect: 'elastic',
-                closeEffect: 'elastic'
+            $(".button").click(function () {
+                $(this).toggleClass("current");
+                $(".menu-list ").stop(true, true).toggle("slow");
             });
-            $('.central-bot').slick({
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                slide: '.slide',
-                prevArrow: false,
-                nextArrow:false,
-                autoplay: true,
-                autoplaySpeed: 2000,
+            $(".button1").click(function () {
+                $("body").addClass("overhiden");
+                $('body').append('<div class="bg-overlay"></div>');
+                //var idb = $(this).attr("href");
+                //var maskbox = "mask-menu";
+                //mymenuh(idb);
+                //$(idb).stop(true, true).animate({ left: 0 }, 500, function () {
+                //    $(this).after('<div class="' + maskbox + '"></div>');
+                //    $("." + maskbox).click(function () {
+                //        $(idb).stop(true, true).animate({ left: "-100%" }, 500, function () {
+                //            $("." + maskbox).remove();
+                //        });
+                //    });
+                //});
+                //$(idb).find(".closea").click(function () {
+                //    $(idb).stop(true, true).animate({ left: "-100%" }, 500, function () {
+                //        $("." + maskbox).remove();
+                //    });
+                //    return false;
+                //});
+                //$(window).resize(function () {
+                //    mymenuh(idb); ;
+                //});
+                $('.wrappper-mobile').addClass('open-menu');
             });
-        });
-        $(".button").click(function () {
-            $(this).toggleClass("current");
-            $(".menu-list ").stop(true, true).toggle("slow");
-        });
-        $(".button1").click(function () {
-            $("body").addClass("overhiden");
-            $('body').append('<div class="bg-overlay"></div>');
-            //var idb = $(this).attr("href");
-            //var maskbox = "mask-menu";
-            //mymenuh(idb);
-            //$(idb).stop(true, true).animate({ left: 0 }, 500, function () {
-            //    $(this).after('<div class="' + maskbox + '"></div>');
-            //    $("." + maskbox).click(function () {
-            //        $(idb).stop(true, true).animate({ left: "-100%" }, 500, function () {
-            //            $("." + maskbox).remove();
+            $(document).on('click', '.bg-overlay, .closea', function (e) {
+                $('.wrappper-mobile').removeClass('open-menu');
+                $('.bg-overlay').remove();
+            });
+            $(".search-click").click(function () {
+                $(this).toggleClass("current");
+                $(".search").stop(true, true).toggle("slow");
+            });
+            $(".del").click(function () {
+                $(".search").hide("slow");
+            })
+            $(".key-click").click(function () {
+                $(this).toggleClass("current");
+                $(".number-show").stop(true, true).toggle("slow");
+            });
+
+            $("#sub1").click(function () {
+                $(this).toggleClass("current");
+                $("#sub2").stop(true, true).toggle("slow");
+            });
+            $("#sub3").click(function () {
+                $(this).toggleClass("current");
+                $("#sub4").stop(true, true).toggle("slow");
+            });
+            //        $('.panel-heading a[data-toggle="collapse"]').click(function () {
+            //            $('.panel-heading').removeClass('actives');
+            //            $(this).toggleClass("current").parents('.panel-heading').addClass('actives');
+            //            $('.panel-heading').each(function () {
+            //                if (!$(this).hasClass("actives")) {
+            //                    $(this).find('a[data-toggle="collapse"]').removeClass("current");
+            //                }
+            //            });
             //        });
-            //    });
-            //});
-            //$(idb).find(".closea").click(function () {
-            //    $(idb).stop(true, true).animate({ left: "-100%" }, 500, function () {
-            //        $("." + maskbox).remove();
-            //    });
-            //    return false;
-            //});
-            //$(window).resize(function () {
-            //    mymenuh(idb); ;
-            //});
-            $('.wrappper-mobile').addClass('open-menu');
-        });
-        $(document).on('click', '.bg-overlay, .closea', function (e) {
-            $('.wrappper-mobile').removeClass('open-menu');
-            $('.bg-overlay').remove();
-        });
-        $(".search-click").click(function () {
-            $(this).toggleClass("current");
-            $(".search").stop(true, true).toggle("slow");
-        });
-        $(".del").click(function () {
-            $(".search").hide("slow");
-        })
-        $(".key-click").click(function () {
-            $(this).toggleClass("current");
-            $(".number-show").stop(true, true).toggle("slow");
-        });
 
-        $("#sub1").click(function () {
-            $(this).toggleClass("current");
-            $("#sub2").stop(true, true).toggle("slow");
-        });
-        $("#sub3").click(function () {
-            $(this).toggleClass("current");
-            $("#sub4").stop(true, true).toggle("slow");
-        });
-//        $('.panel-heading a[data-toggle="collapse"]').click(function () {
-//            $('.panel-heading').removeClass('actives');
-//            $(this).toggleClass("current").parents('.panel-heading').addClass('actives');
-//            $('.panel-heading').each(function () {
-//                if (!$(this).hasClass("actives")) {
-//                    $(this).find('a[data-toggle="collapse"]').removeClass("current");
-//                }
-//            });
-//        });
-
-        //$('.menu-list li').hover(function () {
-        //    $(this).children('.menu-sub').stop(true, false, true).slideToggle(300);
-        //});
-        $('.menu-list li').click(function () {
-            $('.menu-sub').slideUp();
-            $(this).children('.menu-sub').stop(true, false, true).slideToggle(300);
-        });
-        $(".selecc-colores li a").click(function() {
-            var productcolorid = $(this).attr("productcolorid");
-            $("[id$='hdnProductOptionCategoryID']").val(productcolorid);
-            $(".selecc-colores li a").removeClass("select-color");
-            $(this).addClass("select-color");
-        });
-        $(".selecc-colores li:first-child a").trigger('click');
-        /*======================*/
-        function mymenuh(idmenu) {
-            var hhead = $(idmenu).find(".head-menu").outerHeight();
-            var hwin = $(window).height();
-            $(idmenu).find(".menu-content").height(hwin - hhead);
-        }
-        /*==============function=====================*/
-        $(function () {
-            $("#tabs").tabs();
-        });
-        function myfunload() {
-            if ($('.isolist').size() > 0) {
-                var isolist = $('.isolist').imagesLoaded(function () {
-                    isolist.isotope({
-                        itemSelector: '.element-item',
-                        layoutMode: 'fitRows'
-                    });
-                });
+            //$('.menu-list li').hover(function () {
+            //    $(this).children('.menu-sub').stop(true, false, true).slideToggle(300);
+            //});
+            $('.menu-list li').click(function () {
+                $('.menu-sub').slideUp();
+                $(this).children('.menu-sub').stop(true, false, true).slideToggle(300);
+            });
+            $(".selecc-colores li a").click(function () {
+                var productcolorid = $(this).attr("productcolorid");
+                $("[id$='hdnProductOptionCategoryID']").val(productcolorid);
+                $(".selecc-colores li a").removeClass("select-color");
+                $(this).addClass("select-color");
+            });
+            $(".selecc-colores li:first-child a").trigger('click');
+            /*======================*/
+            function mymenuh(idmenu) {
+                var hhead = $(idmenu).find(".head-menu").outerHeight();
+                var hwin = $(window).height();
+                $(idmenu).find(".menu-content").height(hwin - hhead);
             }
-            if ($('.produc-tblist').size() > 0) {
-                var productlist = $('.produc-tblist').imagesLoaded(function () {
-                    productlist.textHeight({
-                        activetit: true,
-                        listcss: [{ cssname: ".product-imgs" }, { cssname: ".product-name" }, { cssname: ".product-price"}, { cssname: ".product-box"}],
-                        wpointb: true,
-                        //widthpont: 479,
-                        desbool: false,
-                        listpos: [{ cssnamepos: ".desription", cssheightnum: "3"}],
-                        tbrow: true,
-                        csstr: ".element-item",
-                        max: true
-                    });
-                });
-                $('.produc-tblist').viewloads({
-                    cssitems: ".element-item",
-                    csslink: ".link-view",
-                    idbox: "loadView",
-                    idurl: "#productView",
-                    cssactive: "current",
-                    datattr: "href",
-                    onready: function () {
-                        var proslider = $("#proSlider").slick({
-                            dots: false,
-                            infinite: true,
-                            speed: 300,
-                            prevArrow: "[data-id='proSlider'] .prev",
-                            nextArrow: "[data-id='proSlider'] .next",
-                            slidesToShow: 3,
-                            slidesToScroll: 1,
-                            responsive: [
-                                {
-                                    breakpoint: 1024,
-                                    settings: {
-                                        slidesToShow: 3
-                                    }
-                                },
-                                {
-                                    breakpoint: 639,
-                                    settings: {
-                                        slidesToShow: 2
-                                    }
-                                },
-                                {
-                                    breakpoint: 419,
-                                    settings: {
-                                        slidesToShow: 1
-                                    }
-                                }
-                            ]
+            /*==============function=====================*/
+            $(function () {
+                $("#tabs").tabs();
+            });
+            function myfunload() {
+                if ($('.isolist').size() > 0) {
+                    var isolist = $('.isolist').imagesLoaded(function () {
+                        isolist.isotope({
+                            itemSelector: '.element-item',
+                            layoutMode: 'fitRows'
                         });
-                    }
-                });
+                    });
+                }
+                if ($('.produc-tblist').size() > 0) {
+                    var productlist = $('.produc-tblist').imagesLoaded(function () {
+                        productlist.textHeight({
+                            activetit: true,
+                            listcss: [{ cssname: ".product-imgs" }, { cssname: ".product-name" }, { cssname: ".product-price" }, { cssname: ".product-box" }],
+                            wpointb: true,
+                            //widthpont: 479,
+                            desbool: false,
+                            listpos: [{ cssnamepos: ".desription", cssheightnum: "3" }],
+                            tbrow: true,
+                            csstr: ".element-item",
+                            max: true
+                        });
+                    });
+                    $('.produc-tblist').viewloads({
+                        cssitems: ".element-item",
+                        csslink: ".link-view",
+                        idbox: "loadView",
+                        idurl: "#productView",
+                        cssactive: "current",
+                        datattr: "href",
+                        onready: function () {
+                            var proslider = $("#proSlider").slick({
+                                dots: false,
+                                infinite: true,
+                                speed: 300,
+                                prevArrow: "[data-id='proSlider'] .prev",
+                                nextArrow: "[data-id='proSlider'] .next",
+                                slidesToShow: 3,
+                                slidesToScroll: 1,
+                                responsive: [
+                                    {
+                                        breakpoint: 1024,
+                                        settings: {
+                                            slidesToShow: 3
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 639,
+                                        settings: {
+                                            slidesToShow: 2
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 419,
+                                        settings: {
+                                            slidesToShow: 1
+                                        }
+                                    }
+                                ]
+                            });
+                        }
+                    });
+                }
             }
-        }
-        $(function () {
-            var Accordion = function (el, multiple) {
-                this.el = el || {};
-                this.multiple = multiple || false;
+            $(function () {
+                var Accordion = function (el, multiple) {
+                    this.el = el || {};
+                    this.multiple = multiple || false;
 
-                // Variables privadas
-                var links = this.el.find('.link');
-                // Evento
-                links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
-            }
+                    // Variables privadas
+                    var links = this.el.find('.link');
+                    // Evento
+                    links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
+                }
 
-            Accordion.prototype.dropdown = function (e) {
-                var $el = e.data.el;
-                $this = $(this),
-                    $next = $this.next();
+                Accordion.prototype.dropdown = function (e) {
+                    var $el = e.data.el;
+                    $this = $(this),
+                        $next = $this.next();
 
-                $next.slideToggle();
-                $this.parent().toggleClass('open');
+                    $next.slideToggle();
+                    $this.parent().toggleClass('open');
 
-                if (!e.data.multiple) {
-                    $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
-                };
-            }
+                    if (!e.data.multiple) {
+                        $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+                    };
+                }
 
-            var accordion = new Accordion($('.accordion'), false);
-        });
+                var accordion = new Accordion($('.accordion'), false);
+            });
 
-    </script>
+        </script>
     </form>
 </body>
 </html>
