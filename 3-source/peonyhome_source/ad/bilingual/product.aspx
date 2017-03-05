@@ -176,12 +176,19 @@
                 </tr>
                 <tr>
                     <td class="left">
+                        Mã sản phẩm
+                    </td>
+                    <td>
+                        <asp:RadTextBox ID="txtSearchTag" runat="server" Width="130px" EmptyMessage="Mã sản phẩm...">
+                        </asp:RadTextBox>
+                    </td>
+                    <td class="left">
                         Danh mục
                     </td>
                     <td>
                         <asp:RadComboBox Filter="Contains" ID="ddlSearchCategory" runat="server" DataSourceID="ObjectDataSource2"
                             DataTextField="ProductCategoryName" DataValueField="ProductCategoryID" OnDataBound="DropDownList_DataBound"
-                            Width="134px" EmptyMessage="- Tất cả -">
+                            Width="200px" EmptyMessage="- Tất cả -">
                         </asp:RadComboBox>
                     </td>
                     <td class="left invisible">
@@ -201,13 +208,6 @@
                             DataTextField="OriginName" DataValueField="OriginID" OnDataBound="DropDownList_DataBound"
                             Width="134px" EmptyMessage="- Tất cả -">
                         </asp:RadComboBox>
-                    </td>
-                    <td class="left invisible">
-                        Tag
-                    </td>
-                    <td class="invisible">
-                        <asp:RadTextBox ID="txtSearchTag" runat="server" Width="130px" EmptyMessage="Tag...">
-                        </asp:RadTextBox>
                     </td>
                 </tr>
                 <tr class="invisible">
@@ -419,9 +419,10 @@
                             <asp:HiddenField ID="hdnImageName" runat="server" Value='<%# Eval("ImageName") %>' />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridBoundColumn HeaderText="ID" DataField="ProductID" SortExpression="ProductID">
+                    <asp:GridBoundColumn HeaderText="ID" DataField="ProductID" SortExpression="ProductID" Visible="false">
                     </asp:GridBoundColumn>
                     <asp:GridBoundColumn DataField="ProductName" HeaderText="Tên sản phẩm" SortExpression="ProductName" />
+                    <asp:GridBoundColumn DataField="Tag" HeaderText="Mã sản phẩm" SortExpression="Tag" />
                     <asp:GridTemplateColumn DataField="SavePrice" HeaderText="Giá cũ" SortExpression="SavePrice" Visible="False">
                         <ItemTemplate>
                             <%# string.Format("{0:##,###.##}", Eval("SavePrice")) %>
